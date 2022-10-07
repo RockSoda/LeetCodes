@@ -10,7 +10,7 @@ public class NumberContainers
     
     public void Change(int index, int number) 
     {
-        if(map.ContainsKey(index) && history.ContainsKey(map[index]) && map.ContainsKey(index))
+        if(map.ContainsKey(index) && history.ContainsKey(map[index]))
             history.Remove(map[index]);
         
         if(history.ContainsKey(number)) history.Remove(number);
