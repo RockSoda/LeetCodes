@@ -5,7 +5,11 @@ public class Solution
         //x = No of 2
         //y = No of 3, = num/3
         
+        //2x + 3y = num
+        //3x + 3y = x + num
+        //x + y = (x + num)/3
         //find min(x + y) = min[(x + num)/3]
+        //min[(x + num)/3] => min(x), since num wouldnt change
         
         int x = 0;
         
