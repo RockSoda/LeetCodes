@@ -1,6 +1,6 @@
 public class Solution 
 {
-    // Double the input string s
+        // Double the input string s
 		// Then perform a search on doubled s
 		// Search for s starting from index 1 of the doubled s
 		// Returns true if the index found is not the length of s
