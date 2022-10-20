@@ -1,41 +1,29 @@
 public class Solution 
 {
+    private StringBuilder ConvertHelper(string first, string fifth, string tenth, int num)
+    {
+        var sb = new StringBuilder();
+        
+        if(num<4) for(int i = 0; i < num; i++) sb.Append(first);
+        else if(num == 4) sb = new StringBuilder(first + fifth);
+        else if(num <9 && num >4)
+        {
+            num = num -5;
+            sb = new StringBuilder(fifth);
+            for(int i = 0; i < num ; i++) sb.Append(first);
+        }else if(num == 9) sb = new StringBuilder(first + tenth);
+        
+        return sb;
+    }
+    
     private string Convert(int index, int num)
     {
         var output = new StringBuilder();
-        if(index == 1)
-        {
-            if(num<4) for(int i = 0; i < num; i++) output.Append("I");
-            else if(num == 4) output = new StringBuilder("IV");
-            else if(num <9 && num >4)
-            {
-                num = num -5;
-                output = new StringBuilder("V");
-                for(int i = 0; i < num ; i++) output.Append("I");
-            }else if(num == 9) output = new StringBuilder("IX");
-        }
-        else if(index == 2)
-        {
-            if(num<4) for(int i = 0; i < num; i++) output.Append("X");
-            else if(num == 4) output = new StringBuilder("XL");
-            else if(num <9 && num >4)
-            {
-                num = num -5;
-                output = new StringBuilder("L");
-                for(int i = 0; i < num ; i++) output.Append("X");
-            }else if(num == 9) output = new StringBuilder("XC");
-        }
-        else if(index == 3)
-        {
-            if(num<4) for(int i = 0; i < num; i++) output.Append("C");
-            else if(num == 4) output = new StringBuilder("CD");
-            else if(num <9 && num >4)
-            {
-                num = num -5;
-                output = new StringBuilder("D");
-                for(int i = 0; i < num ; i++) output.Append("C");
-            }else if(num == 9) output = new StringBuilder("CM");
-        }else if(index == 4) for(int i = 0; i < num; i++) output.Append("M");
+        
+        if(index == 1) output = ConvertHelper("I", "V", "X", num);
+        else if(index == 2) output = ConvertHelper("X", "L", "C", num);
+        else if(index == 3) output = ConvertHelper("C", "D", "M", num);
+        else if(index == 4) for(int i = 0; i < num; i++) output.Append("M");
         
         return output.ToString();
     }
