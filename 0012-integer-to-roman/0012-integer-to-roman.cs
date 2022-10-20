@@ -8,7 +8,7 @@ public class Solution
         else if(num == 4) sb.Append(first + fifth);
         else if(num <9 && num >4)
         {
-            num = num -5;
+            num -= 5;
             sb.Append(fifth);
             for(int i = 0; i < num ; i++) sb.Append(first);
         }
