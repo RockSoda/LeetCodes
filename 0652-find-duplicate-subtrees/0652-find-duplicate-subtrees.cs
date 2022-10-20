@@ -103,15 +103,14 @@ public class Solution
     
     private Codec Codex;
     
-    private Dictionary<string, List<string>> dict;
+    private Dictionary<string, int> dict;
     
     private void Recurse(TreeNode node)
     {
         if(node == null) return;
         
         var serialized = Codex.Serialize(node);
-        if(dict.ContainsKey(serialized)) dict[serialized].Add(Codex.Serialize(node));
-        else dict[serialized] = new List<string>{ Codex.Serialize(node) };
+        dict[serialized] = dict.ContainsKey(serialized) ? dict[serialized]+1 : 1;
         
         Recurse(node.left);
         Recurse(node.right);
@@ -120,18 +119,14 @@ public class Solution
     public IList<TreeNode> FindDuplicateSubtrees(TreeNode root) 
     {
         Codex = new Codec();
-        dict = new Dictionary<string, List<string>>();
+        dict = new Dictionary<string, int>();
         
         Recurse(root);
         
         var serializedoutput = new HashSet<string>();
         foreach(var kvp in dict)
         {
-            if(kvp.Value.Count > 1) 
-            {
-                foreach(var serializedNode in kvp.Value)
-                    serializedoutput.Add(serializedNode);
-            }
+            if(kvp.Value > 1) serializedoutput.Add(kvp.Key);
         }
         
         var output = new List<TreeNode>();
