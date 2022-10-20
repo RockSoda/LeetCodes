@@ -123,14 +123,11 @@ public class Solution
         
         Recurse(root);
         
-        var serializedoutput = new HashSet<string>();
+        var output = new List<TreeNode>();
         foreach(var kvp in dict)
         {
-            if(kvp.Value > 1) serializedoutput.Add(kvp.Key);
+            if(kvp.Value > 1) output.Add(Codex.Deserialize(kvp.Key));
         }
-        
-        var output = new List<TreeNode>();
-        foreach(var node in serializedoutput) output.Add(Codex.Deserialize(node));
         
         return output;
     }
