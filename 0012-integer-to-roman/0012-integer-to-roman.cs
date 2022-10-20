@@ -5,13 +5,14 @@ public class Solution
         var sb = new StringBuilder();
         
         if(num<4) for(int i = 0; i < num; i++) sb.Append(first);
-        else if(num == 4) sb = new StringBuilder(first + fifth);
+        else if(num == 4) sb.Append(first + fifth);
         else if(num <9 && num >4)
         {
             num = num -5;
-            sb = new StringBuilder(fifth);
+            sb.Append(fifth);
             for(int i = 0; i < num ; i++) sb.Append(first);
-        }else if(num == 9) sb = new StringBuilder(first + tenth);
+        }
+        else if(num == 9) sb.Append(first + tenth);
         
         return sb;
     }
