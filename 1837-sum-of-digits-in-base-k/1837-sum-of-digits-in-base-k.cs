@@ -5,9 +5,9 @@ public class Solution
         var sb = new StringBuilder();
         while(n > 0)
         {
-            char r = (char)('0' + n % k);
+            int r = n % k;
             n /= k;
-            sb.Insert(0, r);
+            sb.Insert(0, (char)('0' + r));
         }
         
         return sb.ToString();
