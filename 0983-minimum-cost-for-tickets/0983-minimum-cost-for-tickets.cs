@@ -3,10 +3,12 @@ public class Solution
     
     private int GetMin(int a, int b, int c) => Math.Min(Math.Min(a, b), c);
     
-    private Dictionary<(int, int), int> memo = new Dictionary<(int, int), int>();
+    private Dictionary<(int, int), int> memo;
     
     public int MincostTickets(int[] days, int[] costs, int index = 0, int daysCovered = 0) 
     {
+        if(memo == null) memo = new Dictionary<(int, int), int>();
+        
         if(index >= days.Length) return 0;
         
         if(memo.ContainsKey((index, daysCovered))) return memo[(index, daysCovered)];
