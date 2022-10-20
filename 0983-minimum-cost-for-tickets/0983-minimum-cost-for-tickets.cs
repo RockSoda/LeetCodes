@@ -1,9 +1,8 @@
 public class Solution 
 {
+    private Dictionary<(int, int), int> memo;
     
     private int GetMin(int a, int b, int c) => Math.Min(Math.Min(a, b), c);
-    
-    private Dictionary<(int, int), int> memo;
     
     public int MincostTickets(int[] days, int[] costs, int index = 0, int daysCovered = 0) 
     {
