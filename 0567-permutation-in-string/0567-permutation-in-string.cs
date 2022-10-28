@@ -19,7 +19,7 @@ public class Solution
                 }
             }
             
-            if(flag) flag = currMap.Where(x => x == 0).ToList().Count == 26;
+            flag = flag && currMap.Where(x => x != 0).ToList().Count == 0;
             
             if(flag) return true;
         }
