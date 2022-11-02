@@ -20,18 +20,13 @@ public class Solution
         if(curr.Equals(end)) return 0;
         
         var dnaList = new List<string>();
-        foreach(var dna in bank)
-        {
-            if(IsOneDiff(dna, curr)) dnaList.Add(dna);
-        }
+        foreach(var dna in bank) if(IsOneDiff(dna, curr)) dnaList.Add(dna);
         
         var tmpBank = new HashSet<string>(bank);
         tmpBank.Remove(curr);
+        
         int ans = 100000;
-        foreach(var dna in dnaList)
-        {
-            ans = Math.Min(Recurse(dna, end, tmpBank)+1, ans);
-        }
+        foreach(var dna in dnaList) ans = Math.Min(Recurse(dna, end, tmpBank)+1, ans);
         
         return ans;
     }
