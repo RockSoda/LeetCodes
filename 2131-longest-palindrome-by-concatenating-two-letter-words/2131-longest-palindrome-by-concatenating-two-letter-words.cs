@@ -28,24 +28,13 @@ public class Solution
             
             for(int i = 0; i < val; i++)
             {
-                if(map.ContainsKey(ReverseStr(key)))
-                {
-                    if(IsRepetedTwo(key))
-                    {
-                        if(map[key] > 1)
-                        {
-                            counter += 4;
-                            RemoveInstance(map, key);
-                            RemoveInstance(map, key);
-                        }
-                    }
-                    else
-                    {
-                        counter += 4;
-                        RemoveInstance(map, ReverseStr(key));
-                        RemoveInstance(map, key);
-                    }
-                }
+                if(!map.ContainsKey(ReverseStr(key))) continue;
+                    
+                if(IsRepetedTwo(key) && map[key] <= 1) continue;
+                
+                counter += 4;
+                RemoveInstance(map, ReverseStr(key));
+                RemoveInstance(map, key);
             }
         }
         
