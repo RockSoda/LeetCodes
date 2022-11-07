@@ -5,10 +5,10 @@ public class Solution
         string input = s.Replace("+", "").Replace("-", "").Replace("(", "").Replace(")", "").Replace(" ", "");
         
         string lastFour = input.Substring(input.Length - 4);
-        if(input.Length == 10) return new StringBuilder("***-***-" + lastFour).ToString();
-        if(input.Length == 11) return new StringBuilder("+*-***-***-" + lastFour).ToString();
-        if(input.Length == 12) return new StringBuilder("+**-***-***-" + lastFour).ToString();
-        if(input.Length == 13) return new StringBuilder("+***-***-***-" + lastFour).ToString();
+        if(input.Length == 10) return "***-***-" + lastFour;
+        if(input.Length == 11) return "+*-***-***-" + lastFour;
+        if(input.Length == 12) return "+**-***-***-" + lastFour;
+        if(input.Length == 13) return "+***-***-***-" + lastFour;
         
         return "";
     }
