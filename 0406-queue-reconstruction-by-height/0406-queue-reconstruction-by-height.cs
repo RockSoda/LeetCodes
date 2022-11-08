@@ -2,7 +2,7 @@ public class Solution
 {
     public int[][] ReconstructQueue(int[][] people) 
     {
-        var map = new SortedDictionary<int, List<int>>();
+        var map = new SortedDictionary<int, List<int>>(Comparer<int>.Create((x, y) => y.CompareTo(x)));
         
         foreach(var p in people)
         {
@@ -10,10 +10,8 @@ public class Solution
             map[p[0]].Add(p[1]);
         }
         
-        var keys = map.Keys.ToList();
-        keys.Reverse();
         var output = new List<int[]>(new int[people.Length][]);
-        foreach(var key in keys)
+        foreach(var key in map.Keys)
         {
             var indexes = map[key];
             indexes.Sort();
