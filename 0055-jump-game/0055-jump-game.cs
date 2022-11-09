@@ -1,22 +1,22 @@
 public class Solution 
 {
-    private int[] memo;
-    
-    private bool recurse(int[] nums, int index)
+    private bool Recurse(int[] nums, int index, bool?[] memo)
     {
         if(index >= nums.Length-1) return true;
-
-        if(memo[index] != -1) return memo[index] == 1 ? true : false;
-        bool res = false;
-        for(int i = nums[index]; i >= 1; i--) res = res || recurse(nums, i+index);
-
-        memo[index] = res ? 1 : 0;
-        return res;
+        
+        if(memo[index] != null) return (bool)memo[index];
+        
+        bool canJump = false;
+        
+        for(int i = nums[index]; i >= 1; i--) canJump = canJump || Recurse(nums, index+i, memo);
+        
+        memo[index] = canJump;
+        return canJump;
     }
+    
     public bool CanJump(int[] nums) 
     {
-        memo = new int[nums.Length];
-        Array.Fill(memo, -1);
-        return recurse(nums, 0);
+        var memo = new bool?[nums.Length];
+        return Recurse(nums, 0, memo);
     }
 }
