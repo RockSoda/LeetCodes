@@ -9,8 +9,8 @@ public class Solution
             else stk.Push(c);
         }
         
-        var list = stk.ToList();
-        list.Reverse();
-        return new string(list.ToArray());
+        var charAry = stk.ToArray();
+        Array.Reverse(charAry);
+        return new string(charAry);
     }
 }
