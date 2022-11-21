@@ -18,7 +18,8 @@ public class Solution
                 var x = curr.x + dx[i];
                 var y = curr.y + dy[i];
                 
-                if(x < 0 || x >= maze.Length || y < 0 || y >= maze[x].Length || maze[x][y] == '+') continue;
+                if(x < 0 || x >= maze.Length || y < 0 || y >= maze[x].Length || maze[x][y] == '+')
+                    continue;
                 
                 q.Enqueue((x, y, curr.step+1));
                 maze[x][y] = '+';
