@@ -25,7 +25,7 @@ public class Solution
                 if(x < 0 || x >= maze.Length || y < 0 || y >= maze[x].Length || visited[x][y] || maze[x][y] == '+') continue;
                 
                 q.Enqueue((x, y, curr.step+1));
-                visited[x][y] = true;
+                maze[x][y] = '+';
             }
         }
         
