@@ -8,10 +8,6 @@ public class Solution
         var q = new Queue<(int x, int y, int step)>();
         q.Enqueue((entrance[0], entrance[1], 0));
         
-        var visited = new bool[maze.Length][];
-        for(int i = 0; i < visited.Length; i++)
-            visited[i] = new bool[maze[i].Length];
-        
         while(q.Count > 0)
         {
             var curr = q.Dequeue();
@@ -22,7 +18,7 @@ public class Solution
                 var x = curr.x + dx[i];
                 var y = curr.y + dy[i];
                 
-                if(x < 0 || x >= maze.Length || y < 0 || y >= maze[x].Length || visited[x][y] || maze[x][y] == '+') continue;
+                if(x < 0 || x >= maze.Length || y < 0 || y >= maze[x].Length || maze[x][y] == '+') continue;
                 
                 q.Enqueue((x, y, curr.step+1));
                 maze[x][y] = '+';
