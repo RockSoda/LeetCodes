@@ -3,9 +3,7 @@ public class Solution
     private bool IsPerfect(int n)
     {
         int r = (int)Math.Sqrt(n);
-        if(r*r == n) return true;
-        
-        return false;
+        return r*r == n;
     }
     
     public int NumSquares(int n) 
