@@ -23,9 +23,8 @@ public class Solution
         {
             for(int j = 0; j < board[i].Length; j++)
             {
-                var res = false;
-                if(board[i][j] == word.First()) res = DFS(board, word, 0, i, j);
-                if(res) return true;
+                if(board[i][j] == word.First() && DFS(board, word, 0, i, j))
+                    return true;
             }
         }
         
