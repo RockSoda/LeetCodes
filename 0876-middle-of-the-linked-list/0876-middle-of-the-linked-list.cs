@@ -11,25 +11,19 @@
  */
 public class Solution 
 {
-    private int SIZE;
-    private ListNode output;
-    
-    private void GetMidNode(ListNode node, int len)
-    {
-        if(node == null)
-        {
-            SIZE = len;
-            return;
-        }
-        
-        GetMidNode(node.next, len+1);
-        
-        if(SIZE / 2 == len) output = node;
-    }
-    
     public ListNode MiddleNode(ListNode head) 
     {
-        GetMidNode(head, 0);
-        return output;
+        var stk = new Stack<ListNode>();
+        var size = 0;
+        while(head != null)
+        {
+            size++;
+            stk.Push(head);
+            head = head.next;
+        }
+        
+        for(int i = 0; i < (size % 2 == 0 ? size/2-1 : size/2); i++) stk.Pop();
+        
+        return stk.Peek();
     }
 }
