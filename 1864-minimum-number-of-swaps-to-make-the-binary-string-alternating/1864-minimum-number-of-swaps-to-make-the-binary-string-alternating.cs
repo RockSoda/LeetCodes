@@ -35,8 +35,8 @@ public class Solution
                 if(s[i] != majority) counter++;
                 if(s[i+1] != minority) counter++;
             }
-            counter += s.Last() != majority ? 1 : 0;
-            return counter / 2;
+            
+            return counter % 2 == 0 ? counter / 2 : counter / 2 + 1;
         }
         
     }
