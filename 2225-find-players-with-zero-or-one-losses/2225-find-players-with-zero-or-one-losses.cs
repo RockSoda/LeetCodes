@@ -9,9 +9,8 @@ public class Solution
         
         var map = new Dictionary<int, int>();
         foreach(var match in matches)
-        {
             map[match[1]] = map.ContainsKey(match[1]) ? map[match[1]]+1 : 1;
-        }
+        
         var lostOnce = map.Where(kvp => kvp.Value == 1).Select(kvp => kvp.Key).ToList();
         lostOnce.Sort();
         
