@@ -13,10 +13,8 @@ public class RandomizedSet
     
     public bool Remove(int val) => hSet.Remove(val);
     
-    public int GetRandom() 
-    {
-        return hSet.ToList()[rng.Next(0, hSet.Count)];
-    }
+    public int GetRandom() =>
+        hSet.ToList()[rng.Next(0, hSet.Count)];
 }
 
 /**
