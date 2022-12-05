@@ -2,8 +2,6 @@ public class Solution
 {
     public int MinSubArrayLen(int target, int[] nums)
     {
-        if (nums.Length == 1) return nums[0] >= target ? 1 : 0;
-
         int left = 0;
         int right = left;
         int curr = nums[left];
