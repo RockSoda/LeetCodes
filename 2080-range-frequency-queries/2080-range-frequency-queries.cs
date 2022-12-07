@@ -13,10 +13,8 @@ public class RangeFreqQuery
         }
     }
     
-    public int Query(int left, int right, int value)
-    {
-        return map.ContainsKey(value) ? SearchIndex(map[value], right, false) - SearchIndex(map[value], left, true) + 1 : 0;
-    }
+    public int Query(int left, int right, int value) =>
+        map.ContainsKey(value) ? SearchIndex(map[value], right, false) - SearchIndex(map[value], left, true) + 1 : 0;
     
     private int SearchIndex(List<int> indexes, int target, bool isLeft)
     {
