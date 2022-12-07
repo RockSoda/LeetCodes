@@ -2,11 +2,8 @@ public class RangeFreqQuery
 {
     private Dictionary<int, List<int>> map;
     
-    private Dictionary<(int, int, int), int> history;
-    
     public RangeFreqQuery(int[] arr) 
     {
-        history = new Dictionary<(int, int, int), int>();
         map = new Dictionary<int, List<int>>();
         for(int i = 0; i < arr.Length; i++)
         {
@@ -18,9 +15,7 @@ public class RangeFreqQuery
     
     public int Query(int left, int right, int value)
     {
-        if(history.ContainsKey((left, right, value))) return history[(left, right, value)];
-        
-        return history[(left, right, value)] = map.ContainsKey(value) ? SearchIndex(map[value], right, false) - SearchIndex(map[value], left, true) + 1 : 0;
+        return map.ContainsKey(value) ? SearchIndex(map[value], right, false) - SearchIndex(map[value], left, true) + 1 : 0;
     }
     
     private int SearchIndex(List<int> indexes, int target, bool isLeft)
