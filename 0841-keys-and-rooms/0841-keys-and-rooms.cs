@@ -1,20 +1,20 @@
 public class Solution 
 {
-    private void Recurse(IList<IList<int>> rooms, bool[] visited, int current)
+    private void Recurse(IList<IList<int>> rooms, int key, bool[] visited)
     {
-        if(visited[current]) return;
+        if(key >= visited.Length || visited[key]) return;
         
-        visited[current] = true;
+        visited[key] = true;
         
-        foreach(var key in rooms[current])
-            Recurse(rooms, visited, key);
+        foreach(var cur in rooms[key])
+            Recurse(rooms, cur, visited);
     }
     
     public bool CanVisitAllRooms(IList<IList<int>> rooms) 
     {
         var visited = new bool[rooms.Count];
         
-        Recurse(rooms, visited, 0);
+        Recurse(rooms, 0, visited);
         
         return !visited.Any(x => !x);
     }
