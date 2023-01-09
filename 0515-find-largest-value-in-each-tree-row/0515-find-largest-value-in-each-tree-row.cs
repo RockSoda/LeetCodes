@@ -13,7 +13,7 @@
  */
 public class Solution 
 {
-    private void Traversal(TreeNode node, SortedDictionary<int, int> map, int level = 0)
+    private void Traversal(TreeNode node, Dictionary<int, int> map, int level = 0)
     {
         if(node == null) return;
         
@@ -26,7 +26,7 @@ public class Solution
     
     public IList<int> LargestValues(TreeNode root) 
     {
-        var map = new SortedDictionary<int, int>();
+        var map = new Dictionary<int, int>();
         Traversal(root, map);
         return map.Values.ToList();
     }
