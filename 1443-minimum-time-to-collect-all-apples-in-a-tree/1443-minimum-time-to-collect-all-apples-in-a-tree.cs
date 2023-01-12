@@ -47,19 +47,16 @@ public class Solution
             map[edge[1]].Add(edge[0]);
         }
         
-        var apples = new List<int>();
-        for(int i = 0; i < hasApple.Count; i++)
-            if(hasApple[i]) apples.Add(i);
-        
-        if(apples.Count == 0) return 0;
-        
         var ans = 0;
         var prev = new HashSet<int>();
-        foreach(var apple in apples)
+        
+        for(int i = 0; i < hasApple.Count; i++)
         {
+            if(!hasApple[i]) continue;
+            
             var steps = "";
             route = "";
-            ans += GetMin(map, apple, new HashSet<int>(), prev, steps);
+            ans += GetMin(map, i, new HashSet<int>(), prev, steps);
             prev = prev.Union(StringToHashSet(route)).ToHashSet();
         }
         
