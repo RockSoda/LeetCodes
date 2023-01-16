@@ -5,6 +5,7 @@ public class Solution
         var output = new List<int[]>();
         var newAry = new int[] { -1, -1 };
         bool isAdded = false;
+        
         for (int i = 0; i < intervals.Length; i++)
         {
             if (intervals[i][1] < newInterval[0])
@@ -20,17 +21,17 @@ public class Solution
                 }
                 
                 if (newAry[0] == -1) newAry[0] = newInterval[0];
+                
                 if (!isAdded)
                 {
                     output.Add(newAry);
                     isAdded = true;
                 }
+                
                 output.Add(intervals[i]);
             }
             else if (intervals[i][1] >= newInterval[0] && intervals[i][0] <= newInterval[0] && newAry[0] == -1)
-            {
                 newAry[0] = intervals[i][0];
-            }
             else if (intervals[i][0] <= newInterval[1] && intervals[i][1] >= newInterval[1] && newAry[0] != -1)
             {
                 newAry[1] = intervals[i][1];
@@ -41,9 +42,7 @@ public class Solution
                 }
             }
             else if (intervals[i][0] == newInterval[1])
-            {
                 newAry[1] = intervals[i][1];
-            }
         }
 
         if(!isAdded)
