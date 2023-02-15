@@ -26,12 +26,8 @@ public class Solution
             
             int curr = isCarry ? a+b+1 : a+b;
             
-            if(curr >= 10)
-            {
-                isCarry = true;
-                curr -= 10;
-            }
-            else isCarry = false;
+            isCarry = curr >= 10;
+            if(isCarry) curr -= 10;
             
             output.Add(curr);
         }
