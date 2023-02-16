@@ -13,14 +13,10 @@
  */
 public class Solution 
 {
-    public int MaxDepth(TreeNode root, int depth = 0, int maxDepth = 0) 
+    public int MaxDepth(TreeNode root, int depth = 0) 
     {
-        if(root == null)
-        {
-            maxDepth = Math.Max(depth, maxDepth);
-            return maxDepth;
-        }
+        if(root == null) return depth;
         
-        return Math.Max(MaxDepth(root.left, depth+1, maxDepth), MaxDepth(root.right, depth+1, maxDepth));
+        return Math.Max(MaxDepth(root.left, depth+1), MaxDepth(root.right, depth+1));
     }
 }
