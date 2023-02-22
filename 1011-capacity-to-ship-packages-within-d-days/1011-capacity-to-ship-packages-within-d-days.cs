@@ -10,7 +10,7 @@ public class Solution
                 daysNeeded++;
                 currWeight = 0;
             }
-            currWeight = currWeight + weight;
+            currWeight += weight;
         }
         
         return daysNeeded;
