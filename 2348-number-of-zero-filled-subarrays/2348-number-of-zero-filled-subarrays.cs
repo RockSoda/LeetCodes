@@ -35,9 +35,14 @@ public class Solution
         input.Add(1);
         var zeroIntervals = GetZeroIntervals(input);
         
+        var memo = new Dictionary<int, long>();
         long output = 0;
         foreach(var zeros in zeroIntervals)
-            output += GetSum(zeros);
+        {
+            if(!memo.ContainsKey(zeros)) memo[zeros] = GetSum(zeros);
+            
+            output += memo[zeros];
+        }
         
         return output;
     }
