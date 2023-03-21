@@ -23,7 +23,7 @@ public class Solution
         return output;
     }
     
-    private long GetFactorial(int num)
+    private long GetSum(int num)
     {
         long output = 0;
         
@@ -39,7 +39,7 @@ public class Solution
         var zeroIntervals = GetZeroIntervals(input);
         long output = 0;
         foreach(var zeros in zeroIntervals)
-            output += GetFactorial(zeros);
+            output += GetSum(zeros);
         
         return output;
     }
