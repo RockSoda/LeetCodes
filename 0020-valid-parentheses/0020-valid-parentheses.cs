@@ -1,5 +1,8 @@
 public class Solution 
 {
+    private bool CannotPop(Stack<char> stk, char c) =>
+        stk.Count == 0 || stk.Pop() != c;
+    
     public bool IsValid(string s) 
     {
         var stk = new Stack<char>();
@@ -13,13 +16,13 @@ public class Solution
                     stk.Push(c);
                     break;
                 case ')':
-                    if(stk.Count == 0 || stk.Pop() != '(') return false;
+                    if(CannotPop(stk, '(')) return false;
                     break;
                 case '}':
-                    if(stk.Count == 0 || stk.Pop() != '{') return false;
+                    if(CannotPop(stk, '{')) return false;
                     break;
                 case ']':
-                    if(stk.Count == 0 || stk.Pop() != '[') return false;
+                    if(CannotPop(stk, '[')) return false;
                     break;
                 default:
                     break;
