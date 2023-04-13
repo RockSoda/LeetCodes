@@ -25,9 +25,7 @@ public class Solution
         }
         
         while(stk.Count > 0 && indexPop < popped.Length)
-        {
             if(stk.Pop() != popped[indexPop++]) return false;
-        }
         
         return stk.Count == 0 && indexPop == popped.Length && indexPush == pushed.Length;
     }
