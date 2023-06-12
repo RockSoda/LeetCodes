@@ -5,16 +5,15 @@ public class Solution
         var output = new List<string>();
         var stk = new Stack<int>();
         
-        void AddRange()
+        void AddToList()
         {
-            int right = stk.Pop();
-            int left = stk.Pop();
-            output.Add(left.ToString() + "->" + right.ToString());
-        }
-        
-        void AddItem()
-        {
-            output.Add(stk.Pop().ToString());
+            if (stk.Count == 1) output.Add(stk.Pop().ToString());
+            else
+            {
+                int right = stk.Pop();
+                int left = stk.Pop();
+                output.Add(left.ToString() + "->" + right.ToString());
+            }
         }
         
         for(int i = 0; i < nums.Length; i++)
@@ -25,18 +24,13 @@ public class Solution
                 {
                     if (stk.Count > 1) stk.Pop();
                 }
-                else if (stk.Count == 1) AddItem();
-                else AddRange();
+                else AddToList();
             }
             
             stk.Push(nums[i]);
         }
         
-        if(stk.Count > 0)
-        {
-            if (stk.Count == 1) AddItem();
-            else AddRange();
-        }
+        if(stk.Count > 0) AddToList();
         
         return output;
     }
