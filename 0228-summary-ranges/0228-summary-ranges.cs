@@ -20,11 +20,8 @@ public class Solution
         {
             if (stk.Count > 0)
             {
-                if (stk.Peek()+1 == nums[i])
-                {
-                    if (stk.Count > 1) stk.Pop();
-                }
-                else AddToList();
+                if (stk.Peek()+1 != nums[i]) AddToList();
+                else if (stk.Count > 1) stk.Pop();
             }
             
             stk.Push(nums[i]);
