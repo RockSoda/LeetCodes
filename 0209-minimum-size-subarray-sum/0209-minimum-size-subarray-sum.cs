@@ -8,8 +8,6 @@ public class Solution
         int len = 0;
         while (left <= right)
         {
-            int prevL = left;
-            int prevR = right;
             if (curr >= target)
             {
                 if (len == 0) len = right - left + 1;
@@ -18,8 +16,7 @@ public class Solution
                 curr -= nums[left++];
             }
             else if (right < nums.Length - 1) curr += nums[++right];
-
-            if (prevL == left && prevR == right) break;
+            else break;
         }
 
         return len;
