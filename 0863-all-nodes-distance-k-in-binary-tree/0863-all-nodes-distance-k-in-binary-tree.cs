@@ -49,10 +49,9 @@ public class Solution
         
         int curr = 1;
         var visited = new HashSet<TreeNode>();
-        var idx = parent.Count - 1;
-        while(idx >= 0)
+        for(int i = parent.Count - 1; i >= 0; i--)
         {
-            var currParent = parent[idx--];
+            var currParent = parent[i];
             GetParents(currParent, target, k, curr, visited);
             
             visited.Add(currParent);
