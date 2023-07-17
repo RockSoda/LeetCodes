@@ -17,8 +17,6 @@ public class Solution
     
     private ListNode Solve(ListNode l1, ListNode l2)
     {
-        if(current == null) current = output;
-        
         if(l1 == null && l2 == null)
         {
             if(carry) current.next = new ListNode(1);
@@ -88,7 +86,7 @@ public class Solution
     {
         carry = false;
         output = new ListNode();
-        current = null;
+        current = output;
         
         return Reverse(Solve(Reverse(l1), Reverse(l2)));
     }
