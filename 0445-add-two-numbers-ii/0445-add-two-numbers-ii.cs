@@ -17,7 +17,7 @@ public class Solution
     
     private ListNode Solve(ListNode l1, ListNode l2)
     {
-        void CreateAndCurrentToNext()
+        void CreateAndSetCurrentToNext()
         {
             current.next = new ListNode();
             current = current.next;
@@ -44,19 +44,19 @@ public class Solution
             
             if(l1 == null)
             {
-                if(l2.next != null) CreateAndCurrentToNext();
+                if(l2.next != null) CreateAndSetCurrentToNext();
             
                 return Solve(null, l2.next);
             }
             else if(l2 == null)
             {
-                if(l1.next != null) CreateAndCurrentToNext();
+                if(l1.next != null) CreateAndSetCurrentToNext();
             
                 return Solve(l1.next, null);
             }
             else
             {
-                if(l1.next != null || l2.next != null) CreateAndCurrentToNext();
+                if(l1.next != null || l2.next != null) CreateAndSetCurrentToNext();
             
                 return Solve(l1.next, l2.next);
             }
