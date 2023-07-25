@@ -2,18 +2,14 @@ public class Solution
 {
     public int PeakIndexInMountainArray(int[] arr) 
     {
-        int peak = arr[0];
-        int idx = 0;
+        int prev = arr[0];
         
-        for(int i = 1; i < arr.Length; i++)
+        for(int i = 1; i < arr.Length-1; i++)
         {
-            if(arr[i] > peak)
-            {
-                peak = arr[i];
-                idx = i;
-            }
+            var curr = arr[i];
+            if(curr > prev && curr > arr[i+1]) return i;
         }
         
-        return idx;
+        return -1;
     }
 }
