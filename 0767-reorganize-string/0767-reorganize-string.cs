@@ -17,23 +17,23 @@ public class Solution
         
         char[] output = new char[size];
         
-        while(map[mostFreq] > 0)
+        void FillAry(int freq)
         {
-            output[i] = (char)('a' + mostFreq);
+            output[i] = (char)(freq + 'a');
             i += 2;
-            map[mostFreq]--;
+            map[freq]--;
         }
         
-        for(int j = 0; j < 26; j++) 
+        while(map[mostFreq] > 0) FillAry(mostFreq);
+        
+        for(int j = 0; j < 26; j++)
         {
-            while(map[j] > 0) 
+            while(map[j] > 0)
             {
                 if(i >= size) i = 1;
-                output[i] = (char)('a' + j);
-                map[j]--;
-                i += 2;
+                FillAry(j);
             }
-	    }
+        }
         
         return new string(output);
     }
