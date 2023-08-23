@@ -19,21 +19,18 @@ public class Solution
         
         void FillAry(int freq)
         {
-            output[i] = (char)(freq + 'a');
-            i += 2;
-            map[freq]--;
-        }
-        
-        while(map[mostFreq] > 0) FillAry(mostFreq);
-        
-        for(int j = 0; j < 26; j++)
-        {
-            while(map[j] > 0)
+            while(map[freq] > 0)
             {
                 if(i >= size) i = 1;
-                FillAry(j);
+                output[i] = (char)(freq + 'a');
+                i += 2;
+                map[freq]--;
             }
         }
+        
+        FillAry(mostFreq);
+        
+        for(int j = 0; j < 26; j++) FillAry(j);
         
         return new string(output);
     }
