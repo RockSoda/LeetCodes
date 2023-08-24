@@ -20,9 +20,17 @@ public class Solution
             return spaces;
         }
         
-        void AddToList(bool isLastLine = false)
+        void AddToList(bool isSingleSpaced)
         {
-            var numOfSpaces = GetNumOfSpaces();
+            int[] numOfSpaces;
+            
+            if(isSingleSpaced)
+            {
+                numOfSpaces = new int[strList.Count - 1];
+                Array.Fill(numOfSpaces, 1);
+            }
+            else numOfSpaces = GetNumOfSpaces();
+            
             var sb = new StringBuilder();
             for(int i = 0; i < strList.Count; i++)
             {
@@ -47,7 +55,7 @@ public class Solution
             if(currLen > maxWidth) i--;
             else if(currLen == maxWidth) strList.Add(words[i]);
             
-            AddToList();
+            AddToList(currLen == maxWidth);
         }
         
         if(strList.Count > 0)
