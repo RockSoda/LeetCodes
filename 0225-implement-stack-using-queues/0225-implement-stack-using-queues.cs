@@ -17,34 +17,22 @@ public class MyStack
     
     public int Pop() 
     {
-        if (q2.Count == 0)
-        {
-            Channel(q1, q2);
-            return q1.Dequeue();
-        }
-        else
-        {
-            Channel(q2, q1);
-            return q2.Dequeue();
-        }
+        var fromQ = q2.Count == 0 ? q1 : q2;
+        var toQ = q2.Count == 0 ? q2 : q1;
+        
+        Channel(fromQ, toQ);
+        return fromQ.Dequeue();
     }
     
     public int Top() 
     {
-        if (q2.Count == 0)
-        {
-            Channel(q1, q2);
-            var top = q1.Dequeue();
-            q2.Enqueue(top);
-            return top;
-        }
-        else
-        {
-            Channel(q2, q1);
-            var top = q2.Dequeue();
-            q1.Enqueue(top);
-            return top;
-        }
+        var fromQ = q2.Count == 0 ? q1 : q2;
+        var toQ = q2.Count == 0 ? q2 : q1;
+        
+        Channel(fromQ, toQ);
+        var top = fromQ.Dequeue();
+        toQ.Enqueue(top);
+        return top;
     }
     
     private void Channel(Queue<int> fromQ, Queue<int> toQ)
