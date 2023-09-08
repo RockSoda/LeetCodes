@@ -11,19 +11,20 @@ public class Solution
         output.Add(new List<int>{ 1, 1 });
         if(numRows == 2)  return output;
         
-        
         for(int i = 0; i < numRows-2; i++)
         {
-            var lastRow = output[output.Count-1];
+            var lastRow = output.Last();
             int sizeLastRow = lastRow.Count;
             var currentRow = new List<int>();
-            for(int j = 0; j < sizeLastRow+1; j++)
-            {
-                if(j == 0 || j == sizeLastRow) currentRow.Add(1);
-                else currentRow.Add(lastRow[j-1]+lastRow[j]);
-            }
+            
+            currentRow.Add(1);
+            for(int j = 1; j < sizeLastRow; j++)
+                currentRow.Add(lastRow[j-1]+lastRow[j]);
+            currentRow.Add(1);
+            
             output.Add(currentRow);
         }
+        
         return output;
     }
 }
