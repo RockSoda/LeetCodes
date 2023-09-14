@@ -13,8 +13,7 @@ public class Solution
                 if (index < 0) index += decoded.Length;
                 decoded[i] += code[index % decoded.Length];
                 
-                if (k > 0) index++;
-                else index--;
+                index = k > 0 ? index+1 : index-1;
             }
         }
         
