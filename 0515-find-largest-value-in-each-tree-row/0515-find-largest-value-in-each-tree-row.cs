@@ -12,22 +12,21 @@
  * }
  */
 public class Solution 
-{
-    private void Traversal(TreeNode node, Dictionary<int, int> map, int level = 0)
+{   
+    private void Traverse(TreeNode node, Dictionary<int, int> map, int level = 0)
     {
-        if(node == null) return;
+        if (node == null) return;
         
-        if(!map.ContainsKey(level)) map[level] = node.val;
-        else map[level] = Math.Max(map[level], node.val);
+        map[level] = map.ContainsKey(level) ? Math.Max(map[level], node.val) : node.val;
         
-        Traversal(node.left, map, level+1);
-        Traversal(node.right, map, level+1);
+        Traverse(node.left, map, level+1);
+        Traverse(node.right, map, level+1);
     }
     
     public IList<int> LargestValues(TreeNode root) 
     {
         var map = new Dictionary<int, int>();
-        Traversal(root, map);
+        Traverse(root, map);
         return map.Values.ToList();
     }
 }
