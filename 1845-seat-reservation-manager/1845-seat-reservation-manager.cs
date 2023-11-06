@@ -1,16 +1,15 @@
 public class SeatManager 
 {
-    private List<bool> isReserved;
+    private bool[] isReserved;
     
     public SeatManager(int n) 
     {
-        isReserved = new List<bool>(n);
-        for(int i = 0; i < n; i++) isReserved.Add(false);
+        isReserved = new bool[n];
     }
     
     public int Reserve() 
     {
-        int index = isReserved.IndexOf(false);
+        int index = Array.IndexOf(isReserved, false);
         isReserved[index] = true;
         return index+1;
     }
