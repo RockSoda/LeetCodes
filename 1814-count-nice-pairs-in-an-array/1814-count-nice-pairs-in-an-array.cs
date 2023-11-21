@@ -4,11 +4,7 @@ public class Solution
     
     public int CountNicePairs(int[] nums) 
     {
-        int rev(int num)
-        {
-            var str = num.ToString();
-            return int.Parse(new string(str.Reverse().ToArray()));
-        }
+        int rev(int num) => int.Parse(new string(num.ToString().Reverse().ToArray()));
         
         //(nums[i] - rev(nums[i])) == (nums[j] - rev(nums[j]))
         
