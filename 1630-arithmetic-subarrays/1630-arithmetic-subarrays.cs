@@ -1,12 +1,7 @@
 public class Solution 
 {
-    private int[] GetSubAry(int[] nums, int l, int r)
-    {
-        var ary = new int[r-l+1];
-        int idx = 0;
-        for(int i = l; i <= r; i++) ary[idx++] = nums[i];
-        return ary;
-    }
+    private int[] GetSubAry(int[] nums, int l, int r) => 
+        nums.Skip(l).Take(r-l+1).ToArray();
     
     private bool IsArithmetic(int[] nums)
     {
