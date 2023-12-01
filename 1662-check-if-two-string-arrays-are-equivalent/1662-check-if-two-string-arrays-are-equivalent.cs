@@ -2,17 +2,20 @@ public class Solution
 {
     public bool ArrayStringsAreEqual(string[] word1, string[] word2) 
     {
-        int size = word1.Length > word2.Length ? word1.Length : word2.Length;
-        int index = 0;
+        int idx1 = 0, idx2 = 0;
+        
         var sb1 = new StringBuilder();
         var sb2 = new StringBuilder();
-        while(index < size)
+        
+        while(idx1 < word1.Length || idx2 < word2.Length)
         {
-            sb1.Append(index < word1.Length ? word1[index] : "");
-            sb2.Append(index < word2.Length ? word2[index] : "");
+            string curr1 = idx1 < word1.Length ? word1[idx1++] : string.Empty;
+            string curr2 = idx2 < word2.Length ? word2[idx2++] : string.Empty;
             
-            index++;
+            sb1.Append(curr1);
+            sb2.Append(curr2);
         }
-        return sb1.ToString().Equals(sb2.ToString());
+        
+        return string.Compare(sb1.ToString(), sb2.ToString()) == 0;
     }
 }
