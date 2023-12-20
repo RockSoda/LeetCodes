@@ -40,8 +40,6 @@ public class Solution
     
     public ListNode MergeKLists(ListNode[] lists) 
     {
-        if(lists.Length == 0) return null;
-        
         ListNode output = null;
         
         foreach(var list in lists) output = Merge(output, list);
