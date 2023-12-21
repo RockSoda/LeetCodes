@@ -2,7 +2,7 @@ public class Solution
 {
     private bool IsLegal(string num)
     {
-        //'1'
+        //'1' '.'
         if(num.Length == 1) return num != ".";
         
         //'00' '001' '00.01'
@@ -13,7 +13,7 @@ public class Solution
         //01.2
         if(num[0] == '0' && decimalPointIdx != 1) return false;
         
-        //'.' '.1'
+        //'.1'
         if(decimalPointIdx == 0) return false;
         
         //'123' '01'
