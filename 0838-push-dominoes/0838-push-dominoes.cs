@@ -47,17 +47,12 @@ public class Solution
             return true;
         }
         
-        bool isFirstL = true;
         int prevL = -1;
         for(int i = 0; i < charAry.Length-1; i++)
         {
             if(charAry[i] == 'L')
             {
-                if(isFirstL)
-                {
-                    isFirstL = false;
-                    Move(0, i, 'L');
-                }
+                if(prevL == -1) Move(0, i, 'L');
                 else if(CanMoveLeft(prevL, i)) Move(prevL, i, 'L');
                 
                 prevL = i;
@@ -66,7 +61,6 @@ public class Solution
             
             if(charAry[i] != 'R' || !IsLastR(i)) continue;
             
-            isFirstL = false;
             var nextL = GetNextL(i);
             if(nextL == -1)
             {
@@ -104,7 +98,7 @@ public class Solution
             }
             
             if(idx != -1) Move(idx, charAry.Length-1, 'L');
-            else if(isFirstL) Move(0, charAry.Length-1, 'L');
+            else if(prevL == -1) Move(0, charAry.Length-1, 'L');
         }
         
         return new string(charAry);
