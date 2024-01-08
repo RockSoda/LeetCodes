@@ -2,10 +2,10 @@ public class Solution
 {
     public int CountElements(int[] nums) 
     {
-        var counter = 0;
+        int max = nums.ToList().Max(), min = nums.ToList().Min(), counter = 0;
         foreach(var num in nums)
         {
-            if(nums.Any(n => n > num) && nums.Any(n => n < num)) counter++;
+            if(num > min && num < max) counter++;
         }
         
         return counter;
