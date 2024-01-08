@@ -2,7 +2,8 @@ public class Solution
 {
     public int CountElements(int[] nums) 
     {
-        int max = nums.ToList().Max(), min = nums.ToList().Min(), counter = 0;
+        var list = nums.ToList();
+        int max = list.Max(), min = list.Min(), counter = 0;
         foreach(var num in nums)
         {
             if(num > min && num < max) counter++;
