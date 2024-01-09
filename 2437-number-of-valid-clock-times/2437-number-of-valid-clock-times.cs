@@ -17,7 +17,7 @@ public class Solution
             }
             
             //"x?:xx"
-            if(ary[0][1] == '?')
+            else if(ary[0][1] == '?')
             {
                 if(ary[0][0] - '0' == 2) hours = 4;
                 else hours = 10;
@@ -33,7 +33,7 @@ public class Solution
             if(ary[1][0] == '?') minute = 6;
             
             //"xx:x?"
-            if(ary[1][1] == '?') minute = 10;
+            else if(ary[1][1] == '?') minute = 10;
         }
         
         return hours*minute;
