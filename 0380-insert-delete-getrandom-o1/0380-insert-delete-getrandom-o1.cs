@@ -1,20 +1,19 @@
 public class RandomizedSet 
 {
-    private Random rng;
-    private HashSet<int> hSet;
+    private Random _rng;
+    private HashSet<int> _set;
     
     public RandomizedSet() 
     {
-        hSet = new HashSet<int>();
-        rng = new Random();
+        _set = new HashSet<int>();
+        _rng = new Random();
     }
     
-    public bool Insert(int val) => hSet.Add(val);
+    public bool Insert(int val) => _set.Add(val);
     
-    public bool Remove(int val) => hSet.Remove(val);
+    public bool Remove(int val) => _set.Remove(val);
     
-    public int GetRandom() =>
-        hSet.ToList()[rng.Next(0, hSet.Count)];
+    public int GetRandom() => _set.ToList()[_rng.Next(_set.Count)];
 }
 
 /**
