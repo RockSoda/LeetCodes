@@ -11,9 +11,5 @@ public class Solution
         return memo[n] = Recurse(n-1, memo) + Recurse(n-2, memo);
     }
     
-    public int ClimbStairs(int n) 
-    {
-        var memo = new Dictionary<int, int>();
-        return Recurse(n, memo);
-    }
+    public int ClimbStairs(int n) => Recurse(n, []);
 }
