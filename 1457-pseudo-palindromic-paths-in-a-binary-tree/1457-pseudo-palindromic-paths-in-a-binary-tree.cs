@@ -35,12 +35,15 @@ public class Solution
     {
         if(node == null) return;
         
-        map[node.val] = map.ContainsKey(node.val) ? map[node.val]+1 : 1;
+        if(!map.ContainsKey(node.val)) map[node.val] = 0;
+        map[node.val]++;
         
         if(IsLeaf(node) && IsPseudoPalin(map)) _num++;
         
-        Traverse(node.left, new Dictionary<int, int>(map));
-        Traverse(node.right, new Dictionary<int, int>(map));
+        Traverse(node.left, map);
+        Traverse(node.right, map);
+        
+        map[node.val]--;
     }
     
     public int PseudoPalindromicPaths (TreeNode root) 
