@@ -10,23 +10,20 @@ public class Solution
         
         if(memo[i][j1][j2] != -1) return memo[i][j1][j2];
         
-        int curr1 = grid[i][j1];
-        int curr2 = grid[i][j2];
+        int curr = j1 == j2 ? grid[i][j1] : grid[i][j1] + grid[i][j2];
         
-        if(j1 == j2) curr2 = 0;
-        
-        if(i == grid.Length-1) return curr1+curr2;
+        if(i == grid.Length-1) return curr;
         
         return memo[i][j1][j2] = GetMax(
-            DP(grid, i+1, j1-1, j2-1, memo)+curr1+curr2,
-            DP(grid, i+1, j1-1, j2, memo)+curr1+curr2,
-            DP(grid, i+1, j1-1, j2+1, memo)+curr1+curr2,
-            DP(grid, i+1, j1, j2-1, memo)+curr1+curr2,
-            DP(grid, i+1, j1, j2, memo)+curr1+curr2,
-            DP(grid, i+1, j1, j2+1, memo)+curr1+curr2,
-            DP(grid, i+1, j1+1, j2-1, memo)+curr1+curr2,
-            DP(grid, i+1, j1+1, j2, memo)+curr1+curr2,
-            DP(grid, i+1, j1+1, j2+1, memo)+curr1+curr2);
+            DP(grid, i+1, j1-1, j2-1, memo)+curr,
+            DP(grid, i+1, j1-1, j2, memo)+curr,
+            DP(grid, i+1, j1-1, j2+1, memo)+curr,
+            DP(grid, i+1, j1, j2-1, memo)+curr,
+            DP(grid, i+1, j1, j2, memo)+curr,
+            DP(grid, i+1, j1, j2+1, memo)+curr,
+            DP(grid, i+1, j1+1, j2-1, memo)+curr,
+            DP(grid, i+1, j1+1, j2, memo)+curr,
+            DP(grid, i+1, j1+1, j2+1, memo)+curr);
     }
     
     public int CherryPickup(int[][] grid) 
