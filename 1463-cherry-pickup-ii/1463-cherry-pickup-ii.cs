@@ -3,14 +3,6 @@ public class Solution
     private int GetMax(int a, int b, int c, int d, int e, int f, int g, int h, int i)=>
         Math.Max(Math.Max(Math.Max(Math.Max(a, b), Math.Max(c, d)), Math.Max(Math.Max(e, f), Math.Max(g, h))), i);
     
-    private int[][] CopyMat(int[][] mat)
-    {
-        var output = new int[mat.Length][];
-        int i = 0;
-        foreach(var r in mat) output[i++] = r.ToArray();
-        return output;
-    }
-    
     private int DP(int[][] grid, int i, int j1, int j2, int[][][] memo)
     {
         if(i < 0 || i >= grid.Length ||  j1 < 0 || j1 >= grid[i].Length || j2 < 0 || j2 >= grid[i].Length)
