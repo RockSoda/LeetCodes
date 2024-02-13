@@ -11,15 +11,8 @@ public class Solution
             return IsPalindrome(str, start+1, end-1);
         }
         
-        bool IsPalindromeReverse(string str)
-        {
-            char[] charArray = str.ToCharArray();
-            Array.Reverse(charArray);
-            return string.Compare(new string(charArray), str) == 0;
-        }
-        
         foreach(var word in words)
-            if(IsPalindromeReverse(word)) return word;
+            if(IsPalindrome(word, 0, word.Length-1)) return word;
         
         return string.Empty;
     }
