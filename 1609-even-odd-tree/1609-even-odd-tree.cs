@@ -30,30 +30,33 @@ public class Solution
         var map = new Dictionary<int, List<int>>();
         Traverse(root, 0, map);
         
+        bool IsValid(List<int> list, bool isEven)
+        {
+            var prev = list.First();
+            if(isEven && prev % 2 == 0) return false;
+            else if(!isEven && prev % 2 == 1) return false;
+            for(int i = 1; i < list.Count; i++)
+            {
+                var val = list[i];
+                if(isEven && (val % 2 == 0 || val <= prev)) return false;
+                else if(!isEven && (val % 2 == 1 || val >= prev)) return false;
+                prev = val;
+            }
+            
+            return true;
+        }
+        
         foreach(var kvp in map)
         {
             var list = kvp.Value;
             if(kvp.Key % 2 == 0)
             {
-                var prev = list.First();
-                if(prev % 2 == 0) return false;
-                for(int i = 1; i < list.Count; i++)
-                {
-                    var val = list[i];
-                    if(val % 2 == 0 || val <= prev) return false;
-                    prev = val;
-                }
+                if(!IsValid(list, true)) return false;
             }
             else
             {
-                var prev = list.First();
-                if(prev % 2 == 1) return false;
-                for(int i = 1; i < list.Count; i++)
-                {
-                    var val = list[i];
-                    if(val % 2 == 1 || val >= prev) return false;
-                    prev = val;
-                }
+                
+                if(!IsValid(list, false)) return false;
             }
         }
         
