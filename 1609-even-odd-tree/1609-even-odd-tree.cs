@@ -13,33 +13,40 @@
  */
 public class Solution 
 {
-    private void Traverse(TreeNode node, int level, Dictionary<int, List<int>> map)
+    private void Traverse(TreeNode node, int level, Dictionary<int, List<int>> map, ref bool isBreak)
     {
         if(node == null) return;
+        
+        if(node.val % 2 == level % 2) isBreak = true;
+        
+        if(isBreak) return;
         
         if(!map.ContainsKey(level)) map[level] = new List<int>();
         
         map[level].Add(node.val);
         
-        Traverse(node.left, level+1, map);
-        Traverse(node.right, level+1, map);
+        Traverse(node.left, level+1, map, ref isBreak);
+        Traverse(node.right, level+1, map, ref isBreak);
     }
     
     public bool IsEvenOddTree(TreeNode root) 
     {
         var map = new Dictionary<int, List<int>>();
-        Traverse(root, 0, map);
+        
+        bool isBreak = false;
+        Traverse(root, 0, map, ref isBreak);
+        if(isBreak) return false;
         
         bool IsValid(List<int> list, bool isEven)
         {
             var prev = list.First();
-            if(isEven && prev % 2 == 0) return false;
-            else if(!isEven && prev % 2 == 1) return false;
             for(int i = 1; i < list.Count; i++)
             {
                 var val = list[i];
-                if(isEven && (val % 2 == 0 || val <= prev)) return false;
-                else if(!isEven && (val % 2 == 1 || val >= prev)) return false;
+                
+                if(isEven && val <= prev) return false;
+                else if(!isEven && val >= prev) return false;
+                
                 prev = val;
             }
             
@@ -47,18 +54,7 @@ public class Solution
         }
         
         foreach(var kvp in map)
-        {
-            var list = kvp.Value;
-            if(kvp.Key % 2 == 0)
-            {
-                if(!IsValid(list, true)) return false;
-            }
-            else
-            {
-                
-                if(!IsValid(list, false)) return false;
-            }
-        }
+            if(!IsValid(kvp.Value, kvp.Key % 2 == 0)) return false;
         
         return true;
     }
