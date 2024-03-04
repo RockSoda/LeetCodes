@@ -8,7 +8,7 @@ public class Solution
         foreach(var num in nums)
             map[num] = map.ContainsKey(num) ? map[num]+1 : 1;
         
-        foreach(var kvp in map.ToList())
+        foreach(var kvp in map)
         {
             var freq = kvp.Value;
             var pair = freq / 2;
