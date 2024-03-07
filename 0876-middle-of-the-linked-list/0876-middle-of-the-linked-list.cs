@@ -13,17 +13,15 @@ public class Solution
 {
     public ListNode MiddleNode(ListNode head) 
     {
-        var stk = new Stack<ListNode>();
-        var size = 0;
-        while(head != null)
+        var head1 = head;
+        var head2 = head;
+        
+        while(head1 != null && head2 != null && head2.next != null)
         {
-            size++;
-            stk.Push(head);
-            head = head.next;
+            head1 = head1.next;
+            head2 = head2.next.next;
         }
         
-        for(int i = 0; i < (size % 2 == 0 ? size/2-1 : size/2); i++) stk.Pop();
-        
-        return stk.Peek();
+        return head1;
     }
 }
