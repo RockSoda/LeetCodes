@@ -3,15 +3,16 @@ public class Solution
     public int LengthOfLongestSubstring(string s) 
     {
         int left = 0, max = 0;
-        var set = new HashSet<int>();
+        var map = new Dictionary<int, int>();
         
         for(int right = 0; right < s.Length; right++)
         {
-            while(set.Contains(s[right])) set.Remove(s[left++]);
-            
-            set.Add(s[right]);
-            
-            max = Math.Max(right-left+1, max);
+            if(map.ContainsKey(s[right]) && left <= map[s[right]])
+                left = map[s[right]]+1;
+            else
+                max = Math.Max(max, right - left + 1);
+                
+            map[s[right]] = right;
         }
         
         return max;
