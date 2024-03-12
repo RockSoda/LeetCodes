@@ -13,7 +13,7 @@ public class Solution
 {
     public ListNode RemoveZeroSumSublists(ListNode head) 
     {
-        var map = new Dictionary<ListNode, int>();
+        var map = new Dictionary<int, List<ListNode>>();
         
         var dummyHead = new ListNode(0, head);
         
@@ -21,18 +21,23 @@ public class Solution
         
         var curr = dummyHead.next;
         
+        var prefixSum = dummyHead.val;
+        
         while(curr != null)
         {
-            foreach(var key in map.Keys)
-            {
-                map[key] += curr.val;
-                
-                if(map[key] == 0) key.next = curr.next;
-            }
+            
+            prefixSum += curr.val;
+            
+            if(!map.ContainsKey(prefixSum)) map[prefixSum] = new List<ListNode>();
+            else map[prefixSum].ForEach(node => node.next = curr.next);
+            
+            map[prefixSum].Add(curr);
+            
+            if(prefixSum == 0) dummyHead.next = curr.next;
             
             if(curr.val == 0) prev.next = curr.next;
-            map[prev] = curr.val;
-            prev = curr;
+            else prev = curr;
+            
             curr = curr.next;
         }
         
