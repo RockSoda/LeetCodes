@@ -1,17 +1,20 @@
 public class Solution 
 {
-    //((1 + x) * x) / 2 = ((x + n) * (n - x + 1)) / 2
-
-    //(1 + x) * x = (x + n) * (n - x + 1)
-
-    //0 = -2x^2 + n^2 + n
-    
-    //x = ((n^2 + n) / 2)^.5
-
     public int PivotInteger(int n) 
     {
-        var pivot = Math.Sqrt((Math.Pow(n, 2) + n) / 2);
+        int ComputeSum(int n) => n * (n + 1) / 2;
         
-        return pivot % 1 == 0 ? (int)pivot : -1;
+        int frontSum = 0;
+        int backSum = ComputeSum(n);
+
+        for(int i = 1; i <= n; i++)
+        {
+            frontSum = ComputeSum(i);
+            backSum -= i - 1;
+            
+            if(backSum == frontSum) return i;
+        }
+        
+        return -1;
     }
 }
