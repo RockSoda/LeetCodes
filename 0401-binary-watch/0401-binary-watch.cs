@@ -4,21 +4,24 @@ public class Solution
     {
         if(turnedOn > 8) return new List<string>();
         
-        Dictionary<int, List<int>> GetMap(int maxVal)
-        {
-            var map = new Dictionary<int, List<int>>();
-            for(int i = 0; i <= maxVal; i++)
-            {
-                var binStr = Convert.ToString(i, 2);
-                var numOfOnes = binStr.Count(c => c == '1');
-                if(!map.ContainsKey(numOfOnes)) map[numOfOnes] = new List<int>();
-                map[numOfOnes].Add(i);
-            }
-            return map;
-        }
+        var hourMap = new Dictionary<int, List<string>>();
+        var minMap = new Dictionary<int, List<string>>();
         
-        var hourMap = GetMap(11);
-        var minMap = GetMap(59);
+        for(int i = 0; i <= 59; i++)
+        {
+            var binStr = Convert.ToString(i, 2);
+            var numOfOnes = binStr.Count(c => c == '1');
+                
+            if(!minMap.ContainsKey(numOfOnes)) minMap[numOfOnes] = new List<string>();
+                
+            minMap[numOfOnes].Add(i.ToString());
+            
+            if(i > 11) continue;
+                
+            if(!hourMap.ContainsKey(numOfOnes)) hourMap[numOfOnes] = new List<string>();
+                
+            hourMap[numOfOnes].Add(i.ToString());
+        }
         
         var numOfMins = turnedOn > 5 ? 5 : turnedOn;
         
@@ -31,14 +34,15 @@ public class Solution
             
             foreach(var hour in hourList)
             {
-                var hourStr = hour.ToString()+":";
+                var prefix = hour + ":";
                 minList.ForEach(min => {
-                    var minSb = new StringBuilder();
-                    minSb.Append(hourStr.ToString());
-                    var minStr = min.ToString();
-                    if(minStr.Length == 1) minSb.Append("0");
-                    minSb.Append(minStr);
-                    listOfTime.Add(minSb.ToString());
+                    var sb = new StringBuilder();
+                    
+                    sb.Append(prefix.ToString());
+                    if(min.Length == 1) sb.Append("0");
+                    sb.Append(min);
+                    
+                    listOfTime.Add(sb.ToString());
                 });
             }
             
