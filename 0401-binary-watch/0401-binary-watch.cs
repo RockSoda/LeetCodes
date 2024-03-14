@@ -4,24 +4,21 @@ public class Solution
     {
         if(turnedOn > 8) return new List<string>();
         
-        var hourMap = new Dictionary<int, List<string>>();
-        var minMap = new Dictionary<int, List<string>>();
-        
-        for(int i = 0; i <= 59; i++)
+        Dictionary<int, List<string>> GetMap(int maxVal)
         {
-            var binStr = Convert.ToString(i, 2);
-            var numOfOnes = binStr.Count(c => c == '1');
-                
-            if(!minMap.ContainsKey(numOfOnes)) minMap[numOfOnes] = new List<string>();
-                
-            minMap[numOfOnes].Add(i.ToString());
-            
-            if(i > 11) continue;
-                
-            if(!hourMap.ContainsKey(numOfOnes)) hourMap[numOfOnes] = new List<string>();
-                
-            hourMap[numOfOnes].Add(i.ToString());
+            var map = new Dictionary<int, List<string>>();
+            for(int i = 0; i <= maxVal; i++)
+            {
+                var binStr = Convert.ToString(i, 2);
+                var numOfOnes = binStr.Count(c => c == '1');
+                if(!map.ContainsKey(numOfOnes)) map[numOfOnes] = new List<string>();
+                map[numOfOnes].Add(i.ToString());
+            }
+            return map;
         }
+        
+        var hourMap = GetMap(11);
+        var minMap = GetMap(59);
         
         var numOfMins = turnedOn > 5 ? 5 : turnedOn;
         
