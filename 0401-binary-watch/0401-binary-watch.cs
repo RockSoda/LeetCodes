@@ -35,7 +35,7 @@ public class Solution
                 minList.ForEach(min => {
                     var sb = new StringBuilder();
                     
-                    sb.Append(prefix.ToString());
+                    sb.Append(prefix);
                     if(min.Length == 1) sb.Append("0");
                     sb.Append(min);
                     
