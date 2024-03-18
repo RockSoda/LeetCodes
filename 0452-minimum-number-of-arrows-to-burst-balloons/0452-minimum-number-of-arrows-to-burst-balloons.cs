@@ -7,11 +7,10 @@ public class Solution
         
         for(int i = 1; i < points.Length; i++)
         {
-            if(points[i][0] > end)
-            {
-                arrows++;
-                end = points[i][1];
-            }
+            if(points[i][0] <= end) continue;
+                
+            arrows++;
+            end = points[i][1];
         }
         
         return arrows;
