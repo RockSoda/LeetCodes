@@ -1,12 +1,8 @@
 public class Solution 
 {
-    public IList<int> FindDuplicates(int[] nums) 
-    {
-        var output = new List<int>();
-        var set = new HashSet<int>();
-        foreach(var num in nums)
-            if(!set.Add(num)) output.Add(num);
-        
-        return output;
-    }
+    public IList<int> FindDuplicates(int[] nums) =>
+        nums.GroupBy(num => num).
+             Select(val => new { Key = val.Key, Count = val.Count() }).
+             Where(kvp => kvp.Count > 1).
+             Select(kvp => kvp.Key).ToList();
 }
