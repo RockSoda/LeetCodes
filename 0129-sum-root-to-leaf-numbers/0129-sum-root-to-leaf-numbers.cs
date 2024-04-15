@@ -16,13 +16,13 @@ public class Solution
     private bool IsLeaf(TreeNode node) =>
         node.left == null && node.right == null;
     
-    private void GetStrs(TreeNode node, StringBuilder curr, List<string> list)
+    private void GetStrs(TreeNode node, StringBuilder curr, List<int> list)
     {
         if(node == null) return;
         
         curr.Append(node.val);
         
-        if(IsLeaf(node)) list.Add(curr.ToString());
+        if(IsLeaf(node)) list.Add(int.Parse(curr.ToString()));
         
         var tmp = curr.ToString();
         GetStrs(node.left, new StringBuilder(tmp), list);
@@ -31,12 +31,9 @@ public class Solution
     
     public int SumNumbers(TreeNode root) 
     {
-        var list = new List<string>();
+        var list = new List<int>();
         GetStrs(root, new StringBuilder(), list);
         
-        int output = 0;
-        foreach(var num in list) output += int.Parse(num);
-        
-        return output;
+        return list.Sum();
     }
 }
