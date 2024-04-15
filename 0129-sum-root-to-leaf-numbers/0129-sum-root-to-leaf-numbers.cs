@@ -16,24 +16,17 @@ public class Solution
     private bool IsLeaf(TreeNode node) =>
         node.left == null && node.right == null;
     
-    private void GetStrs(TreeNode node, StringBuilder curr, List<int> list)
+    private int SumPath(TreeNode node, StringBuilder curr)
     {
-        if(node == null) return;
+        if(node == null) return 0;
         
         curr.Append(node.val);
         
-        if(IsLeaf(node)) list.Add(int.Parse(curr.ToString()));
+        if(IsLeaf(node)) return int.Parse(curr.ToString());
         
         var tmp = curr.ToString();
-        GetStrs(node.left, new StringBuilder(tmp), list);
-        GetStrs(node.right, new StringBuilder(tmp), list);
+        return SumPath(node.left, new StringBuilder(tmp)) + SumPath(node.right, new StringBuilder(tmp));
     }
     
-    public int SumNumbers(TreeNode root) 
-    {
-        var list = new List<int>();
-        GetStrs(root, new StringBuilder(), list);
-        
-        return list.Sum();
-    }
+    public int SumNumbers(TreeNode root) => SumPath(root, new StringBuilder());
 }
