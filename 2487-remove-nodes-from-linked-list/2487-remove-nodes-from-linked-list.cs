@@ -11,28 +11,40 @@
  */
 public class Solution 
 {
+    private ListNode Reverse(ListNode node)
+    {
+        ListNode reversed = null;
+        while(node != null)
+        {
+            var curr = new ListNode(node.val, reversed);
+            
+            reversed = curr;
+            node = node.next;
+        }
+        
+        return reversed;
+    }
+    
     public ListNode RemoveNodes(ListNode head) 
     {
-        var list = new List<int>();
-        while(head != null)
-        {
-            list.Add(head.val);
-            head = head.next;
-        }
+        var curr = Reverse(head);
+        var reversedHead = curr;
+        ListNode prevMax = null;
         
-        int max = list.Last();
-        ListNode output = null;
-        for(int i = list.Count - 1; i >= 0; i--)
+        while (curr.next != null)
         {
-            if(max > list[i]) continue;
+            if (prevMax == null) prevMax = curr;
+            else if (prevMax.val <= curr.val)
+            {
+                prevMax.next = curr;
+                prevMax = curr;
+            }
             
-            max = list[i];
-            var node = new ListNode();
-            node.val = list[i];
-            node.next = output;
-            output = node;
+            curr = curr.next;
         }
         
-        return output;
+        if (prevMax.val > curr.val) prevMax.next = null;
+        
+        return Reverse(reversedHead);
     }
 }
