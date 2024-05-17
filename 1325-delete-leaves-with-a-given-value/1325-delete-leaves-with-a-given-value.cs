@@ -35,7 +35,6 @@ public class Solution
     public TreeNode RemoveLeafNodes(TreeNode root, int target) 
     {
         Traverse(ref root, target, null, true);
-        //if(IsLeaf(root) && root.val == target) root = null;
         return root;
     }
 }
