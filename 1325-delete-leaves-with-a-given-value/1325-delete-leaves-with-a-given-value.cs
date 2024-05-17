@@ -15,11 +15,27 @@ public class Solution
 {
     private bool IsLeaf(TreeNode node) => node.left == null && node.right == null;
     
+    private void Traverse(ref TreeNode node, int target, TreeNode parent, bool isLeft)
+    {
+        if(node == null) return;
+        
+        Traverse(ref node.left, target, node, true);
+        Traverse(ref node.right, target, node, false);
+        
+        if(!IsLeaf(node) || node.val != target) return;
+        
+        if(parent != null)
+        {
+            if(isLeft) parent.left = null;
+            else parent.right = null;
+        }
+        else node = null;
+    }
+    
     public TreeNode RemoveLeafNodes(TreeNode root, int target) 
     {
-        if(root.left != null) root.left = RemoveLeafNodes(root.left, target);
-        if(root.right != null) root.right = RemoveLeafNodes(root.right, target);
-        
-        return IsLeaf(root) && root.val == target ? null : root;
+        Traverse(ref root, target, null, true);
+        //if(IsLeaf(root) && root.val == target) root = null;
+        return root;
     }
 }
