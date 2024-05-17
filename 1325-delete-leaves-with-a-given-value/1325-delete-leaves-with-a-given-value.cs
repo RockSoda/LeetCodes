@@ -20,7 +20,6 @@ public class Solution
         if(root.left != null) root.left = RemoveLeafNodes(root.left, target);
         if(root.right != null) root.right = RemoveLeafNodes(root.right, target);
         
-        if(IsLeaf(root) && root.val == target) return null;
-        else return root;
+        return IsLeaf(root) && root.val == target ? null : root;
     }
 }
