@@ -8,7 +8,7 @@ public class Solution
         int remain = s.Length % (numRows+n);
         int numCols;
         
-        if(remain>numRows)
+        if(remain > numRows)
             numCols = (s.Length/(numRows+n))*(1+n)+1+remain%numRows;
         else
             numCols = (s.Length/(numRows+n))*(1+n)+1;
@@ -44,14 +44,14 @@ public class Solution
             }
         }
         
-        string output = "";
+        StringBuilder sb = new StringBuilder();
         for(int i = 0; i < numRows; i++)
         {
             for(int j = 0; j < numCols; j++)
             {
-                if(trav[i][j] != ' ') output += trav[i][j]+"";
+                if(trav[i][j] != ' ') sb.Append(trav[i][j]);
             }
         }
-        return output;
+        return sb.ToString();
     }
 }
