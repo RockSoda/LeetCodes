@@ -30,12 +30,10 @@ public class Solution
                 rowZZ = numRows-2;
                 for(int i = 0; i < numRows; i++)
                 {
-                    try
-                    {
-                        trav[i][j] = s[index];
-                        index++;
-                    }
-                    catch(Exception e){ }
+                    if(i >= trav.Length || j >= trav[i].Length || index >= s.Length) continue;
+                    
+                    trav[i][j] = s[index];
+                    index++;
                 }
             }
             else
