@@ -6,22 +6,21 @@ public class Solution
         
         int maxFreq = 0, val = -1;
         
+        void ProcessEdge(int edge)
+        {
+            map[edge] = map.ContainsKey(edge) ? map[edge]+1 : 1;
+            
+            if(map[edge] > maxFreq)
+            {
+                maxFreq = map[edge];
+                val = edge;
+            }
+        }
+        
         foreach(var edge in edges)
         {
-            map[edge[0]] = map.ContainsKey(edge[0]) ? map[edge[0]]+1 : 1;
-            map[edge[1]] = map.ContainsKey(edge[1]) ? map[edge[1]]+1 : 1;
-            
-            if(map[edge[0]] > maxFreq)
-            {
-                maxFreq = map[edge[0]];
-                val = edge[0];
-            }
-            
-            if(map[edge[1]] > maxFreq)
-            {
-                maxFreq = map[edge[1]];
-                val = edge[1];
-            }
+           ProcessEdge(edge[0]);
+           ProcessEdge(edge[1]);
         }
         
         return val;
