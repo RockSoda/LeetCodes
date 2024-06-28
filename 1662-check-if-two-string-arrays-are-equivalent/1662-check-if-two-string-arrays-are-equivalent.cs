@@ -7,13 +7,16 @@ public class Solution
         var sb1 = new StringBuilder();
         var sb2 = new StringBuilder();
         
+        void Process(ref int idx, ref StringBuilder sb, string[] word)
+        {
+            string curr = idx < word.Length ? word[idx++] : string.Empty;
+            sb.Append(curr);
+        }
+        
         while(idx1 < word1.Length || idx2 < word2.Length)
         {
-            string curr1 = idx1 < word1.Length ? word1[idx1++] : string.Empty;
-            string curr2 = idx2 < word2.Length ? word2[idx2++] : string.Empty;
-            
-            sb1.Append(curr1);
-            sb2.Append(curr2);
+            Process(ref idx1, ref sb1, word1);
+            Process(ref idx2, ref sb2, word2);
         }
         
         return string.Compare(sb1.ToString(), sb2.ToString()) == 0;
