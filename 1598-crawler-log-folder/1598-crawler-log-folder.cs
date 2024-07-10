@@ -2,15 +2,20 @@ public class Solution
 {
     public int MinOperations(string[] logs) 
     {
-        var stk = new Stack<bool>();
+        var stk = new Stack<object>();
         foreach(var log in logs)
         {
-            if(log.Equals("../"))
+            switch(log)
             {
-                if(stk.Count > 0) stk.Pop();
+                case "./":
+                    break;
+                case "../":
+                    if(stk.Count > 0) stk.Pop();
+                    break;
+                default:
+                    stk.Push(null);
+                    break;
             }
-            else if(log.Equals("./")) continue;
-            else stk.Push(true);
         }
         
         return stk.Count;
