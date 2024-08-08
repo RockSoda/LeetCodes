@@ -1,6 +1,6 @@
 public class Solution 
 {
-    private void moveRight(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
+    private void MoveRight(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
     {
         int colRef = currC;
         for(; currC <= colRef+(2*layer+1); currC++)
@@ -12,7 +12,7 @@ public class Solution
         currC--;
     }
     
-    private void moveLeft(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
+    private void MoveLeft(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
     {
         int colRef = currC;
         currC--;
@@ -25,7 +25,7 @@ public class Solution
         currC++;
     }
     
-    private void moveUp(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
+    private void MoveUp(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
     {
         int rowRef = currR;
         currR--;
@@ -37,7 +37,7 @@ public class Solution
         }
     }
     
-    private void moveDown(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
+    private void MoveDown(List<int[]> l, int rows, int cols, ref int currR, ref int currC, int layer)
     {
         int rowRef = currR;
         currR++;
@@ -54,25 +54,22 @@ public class Solution
     {
         var list = new List<int[]>();
         
-        int layer = 0;
-        
-        int currR = rStart;
-        int currC = cStart;
+        int layer = 0, currR = rStart, currC = cStart, size = rows*cols;
         
         while(true)
         {
             
-            moveRight(list, rows, cols, ref currR, ref currC, layer);
-            if(list.Count == rows*cols) break;
+            MoveRight(list, rows, cols, ref currR, ref currC, layer);
+            if(list.Count == size) break;
             
-            moveDown(list, rows, cols, ref currR, ref currC, layer);
-            if(list.Count == rows*cols) break;
+            MoveDown(list, rows, cols, ref currR, ref currC, layer);
+            if(list.Count == size) break;
             
-            moveLeft(list, rows, cols, ref currR, ref currC, layer);
-            if(list.Count == rows*cols) break;
+            MoveLeft(list, rows, cols, ref currR, ref currC, layer);
+            if(list.Count == size) break;
             
-            moveUp(list, rows, cols, ref currR, ref currC, layer);
-            if(list.Count == rows*cols) break;
+            MoveUp(list, rows, cols, ref currR, ref currC, layer);
+            if(list.Count == size) break;
             
             layer++;
         }
