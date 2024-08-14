@@ -2,13 +2,13 @@ public class Trie
 {
     public class Node
     {
-        public Dictionary<char, Node> children { get; set; }
+        public Node[] children { get; set; }
         
         public bool isEndOfWord { get; set; }
         
         public Node() 
         {
-            children = new Dictionary<char, Node>();
+            children = new Node[26];
         }
     }
     
@@ -24,9 +24,10 @@ public class Trie
         var currNode = root;
         foreach(var c in word)
         {
-            if(!currNode.children.ContainsKey(c)) currNode.children[c] = new Node();
+            int idx = c-'a';
+            if(currNode.children[idx] == null) currNode.children[idx] = new Node();
             
-            currNode = currNode.children[c];
+            currNode = currNode.children[idx];
         }
         
         currNode.isEndOfWord = true;
@@ -45,9 +46,10 @@ public class Trie
     {
         foreach(var c in prefix)
         {
-            if(!currNode.children.ContainsKey(c)) return false;
+            int idx = c-'a';
+            if(currNode.children[idx] == null) return false;
             
-            currNode = currNode.children[c];
+            currNode = currNode.children[idx];
         }
         
         return true;
