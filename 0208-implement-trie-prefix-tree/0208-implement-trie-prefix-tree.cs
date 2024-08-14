@@ -1,55 +1,45 @@
 public class Trie 
 {
-    public class Node
-    {
-        public Node[] children { get; set; }
-        
-        public bool isEndOfWord { get; set; }
-        
-        public Node() 
-        {
-            children = new Node[26];
-        }
-    }
-    
-    Node root;
+    Trie[] children { get; set; }
+    bool isEndOfWord { get; set; }
     
     public Trie() 
     {
-        root = new Node();
+        children = new Trie[26];
+        isEndOfWord = false;
     }
     
     public void Insert(string word) 
     {
-        var currNode = root;
+        var currTrie = this;
         foreach(var c in word)
         {
             int idx = c-'a';
-            if(currNode.children[idx] == null) currNode.children[idx] = new Node();
+            if(currTrie.children[idx] == null) currTrie.children[idx] = new Trie();
             
-            currNode = currNode.children[idx];
+            currTrie = currTrie.children[idx];
         }
         
-        currNode.isEndOfWord = true;
+        currTrie.isEndOfWord = true;
     }
     
     public bool Search(string word) 
     {
-        var currNode = root;
+        if(!StartsWith(word, out Trie currTrie)) return false;
         
-        if(!StartsWith(word, ref currNode)) return false;
-        
-        return currNode.isEndOfWord;
+        return currTrie.isEndOfWord;
     }
     
-    private bool StartsWith(string prefix, ref Node currNode)
+    private bool StartsWith(string prefix, out Trie currTrie)
     {
+        currTrie = this;
+        
         foreach(var c in prefix)
         {
             int idx = c-'a';
-            if(currNode.children[idx] == null) return false;
+            if(currTrie.children[idx] == null) return false;
             
-            currNode = currNode.children[idx];
+            currTrie = currTrie.children[idx];
         }
         
         return true;
@@ -57,8 +47,7 @@ public class Trie
     
     public bool StartsWith(string prefix) 
     {
-        var currNode = root;
-        return StartsWith(prefix, ref currNode);
+        return StartsWith(prefix, out Trie currTrie);
     }
 }
 
