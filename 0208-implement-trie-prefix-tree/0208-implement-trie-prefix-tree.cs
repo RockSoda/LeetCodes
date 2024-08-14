@@ -45,10 +45,7 @@ public class Trie
         return true;
     }
     
-    public bool StartsWith(string prefix) 
-    {
-        return StartsWith(prefix, out Trie currTrie);
-    }
+    public bool StartsWith(string prefix) => StartsWith(prefix, out Trie currTrie);
 }
 
 /**
