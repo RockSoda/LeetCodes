@@ -15,17 +15,8 @@ public class Solution
             
             currStones += piles[currIndex];
             
-            if(isAlice)
-            {
-                int nextStones = Recurse(piles, Math.Max(M, X), index + X, false, memo);
-                int totalStones = currStones + nextStones;
-                ans = Math.Max(totalStones, ans);
-            }
-            else
-            {
-                int nextStones = Recurse(piles, Math.Max(M, X), index + X, true, memo);
-                ans = Math.Min(nextStones, ans);
-            }
+            int nextStones = Recurse(piles, Math.Max(M, X), index + X, !isAlice, memo);
+            ans = isAlice ? Math.Max(currStones + nextStones, ans) : Math.Min(nextStones, ans);
         }
         
         return memo[(index, M, isAlice)] = ans;
