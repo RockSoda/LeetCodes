@@ -15,7 +15,7 @@ public class Solution
             
             currStones += piles[currIndex];
             
-            int nextStones = Recurse(piles, Math.Max(M, X), index + X, !isAlice, memo);
+            int nextStones = Recurse(piles, Math.Max(M, X), currIndex + 1, !isAlice, memo);
             ans = isAlice ? Math.Max(currStones + nextStones, ans) : Math.Min(nextStones, ans);
         }
         
