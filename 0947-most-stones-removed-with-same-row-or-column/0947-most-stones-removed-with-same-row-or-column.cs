@@ -6,11 +6,10 @@ public class Solution
         {
             if(i == start || visited[i]) continue;
             
-            if((stones[i][0] - stones[prev][0] == 0) != (stones[i][1] - stones[prev][1] == 0))
-            {
-                visited[i] = true;
-                Recurse(stones, visited, i, start);
-            }
+            if((stones[i][0] == stones[prev][0]) == (stones[i][1] == stones[prev][1])) continue;
+            
+            visited[i] = true;
+            Recurse(stones, visited, i, start);
         }
     }
     
