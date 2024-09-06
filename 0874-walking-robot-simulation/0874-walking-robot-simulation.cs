@@ -30,11 +30,9 @@ public class Solution
             (int x, int y) direction = directions[currentDirection];
             for (int step = 0; step < command; step++) 
             {
-                int nextX = currentPosition.x + direction.x;
-                int nextY = currentPosition.y + direction.y;
-                if (obstacleSet.Contains((nextX, nextY))) break;
-                currentPosition.x = nextX;
-                currentPosition.y = nextY;
+                var nextPosition = (currentPosition.x + direction.x, currentPosition.y + direction.y);
+                if (obstacleSet.Contains(nextPosition)) break;
+                currentPosition = nextPosition;
             }
 
             maxDistanceSquared = Math.Max(
