@@ -21,59 +21,24 @@ public class Solution
         }
         
         int i = 0, j = 0;
-        char dir = 'r';
-
+                                            // right, down, left, up
+        var movements = new (int, int)[]{ (0, 1), (1, 0), (0, -1), (-1, 0) };
+        var curr = 0;
         void CalcIdx()
         {
-            switch(dir)
+            (int nextIPadding, int nextJPadding) = movements[curr];
+            int nextI = i + nextIPadding;
+            int nextJ = j + nextJPadding;
+            
+            if(nextI < 0 || nextI >= m || nextJ < 0 || nextJ >= n || output[nextI][nextJ] != -1)
             {
-                case 'r':
-                {
-                    j++;
-                    if(j >= n || output[i][j] != -1)
-                    {
-                        dir = 'd';
-                        j--;
-                        i++;
-                    }
-                    break;
-                }
-                case 'l':
-                {
-                    j--;
-                    if(j < 0 || output[i][j] != -1)
-                    {
-                        dir = 'u';
-                        j++;
-                        i--;
-                    }
-                    break;
-                }
-                case 'u':
-                {
-                    i--;
-                    if(i < 0 || output[i][j] != -1)
-                    {
-                        dir = 'r';
-                        i++;
-                        j++;
-                    }
-                    break;
-                }
-                case 'd':
-                {
-                    i++;
-                    if(i >= m || output[i][j] != -1)
-                    {
-                        dir = 'l';
-                        i--;
-                        j--;
-                    }
-                    break;
-                }
-                default:
-                    break;
+                curr = (curr + 1) % 4;
+                (nextIPadding, nextJPadding) = movements[curr];
+                nextI = i + nextIPadding;
+                nextJ = j + nextJPadding;
             }
+            i = nextI;
+            j = nextJ;
         }
 
         while(head != null)
