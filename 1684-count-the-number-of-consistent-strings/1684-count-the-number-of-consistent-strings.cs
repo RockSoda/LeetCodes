@@ -8,7 +8,8 @@ public class Solution
         var counter = 0;
         foreach(var word in words)
         {
-            if(word.ToHashSet().IsSubsetOf(set)) counter++;
+            if(word.Any(c => !set.Contains(c))) continue;
+            counter++;
         }
         return counter;
     }
