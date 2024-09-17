@@ -10,10 +10,7 @@ public class Solution
 
             return map.Where(kvp => kvp.Value == 1).Select(kvp => kvp.Key).ToHashSet();
         }
-
-        var set1 = GetDictionaryThenSet(words1);
-        var set2 = GetDictionaryThenSet(words2);
         
-        return set1.Intersect(set2).Count();
+        return  GetDictionaryThenSet(words1).Intersect(GetDictionaryThenSet(words2)).Count();
     }
 }
