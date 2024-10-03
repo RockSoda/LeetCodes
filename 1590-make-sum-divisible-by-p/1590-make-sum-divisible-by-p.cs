@@ -9,11 +9,6 @@ public class Solution
             remainder %= p;
         }
         if(remainder == 0) return 0;
-
-        var prefixSum = new int[nums.Length];
-        prefixSum[0] = nums[0];
-        for (int i = 1; i < nums.Length; i++)
-            prefixSum[i] = prefixSum[i-1] + nums[i];
         
         var minLen = 100001;
 
