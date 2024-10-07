@@ -9,5 +9,5 @@ public class Solution
 		//    search index start from 1 and found s at 3
 		//    return false
     public bool RepeatedSubstringPattern(string s) =>
-        ((s + s).IndexOf(s, 1) != s.Count());
+        (s + s).IndexOf(s, 1) != s.Length;
 }
