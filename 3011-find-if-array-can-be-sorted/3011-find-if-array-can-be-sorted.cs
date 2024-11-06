@@ -11,18 +11,19 @@ public class Solution
         var stk = new Stack<(int min, int max)>();
         for(int i = 0; i < nums.Length; i++)
         {
-            if(prevBit == setBits[i])
+            int setBit = setBits[i], num = nums[i];
+            if(prevBit == setBit)
             {
-                currMin = Math.Min(currMin, nums[i]);
-                currMax = Math.Max(currMax, nums[i]);
+                currMin = Math.Min(currMin, num);
+                currMax = Math.Max(currMax, num);
             }
             else
             {
                 if(stk.Count > 0 && stk.Peek().max >= currMin) return false;
                 stk.Push((currMin, currMax));
-                currMax = nums[i];
-                currMin = nums[i];
-                prevBit = setBits[i];
+                currMax = num;
+                currMin = num;
+                prevBit = setBit;
             }
         }
         
