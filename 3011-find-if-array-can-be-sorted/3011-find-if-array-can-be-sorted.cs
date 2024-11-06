@@ -7,8 +7,12 @@ public class Solution
         for(int i = 0; i < nums.Length; i++)
             setBits[i] = Convert.ToString(nums[i], 2).Count(c => c == '1');
         
-        int currMax = int.MinValue, currMin = int.MaxValue, prevBit = -1;
-        var stk = new Stack<(int min, int max)>();
+        int prevMax = int.MinValue, 
+            prevMin = int.MaxValue, 
+            currMax = int.MinValue, 
+            currMin = int.MaxValue, 
+            prevBit = -1;
+            
         for(int i = 0; i < nums.Length; i++)
         {
             int setBit = setBits[i], num = nums[i];
@@ -19,15 +23,16 @@ public class Solution
             }
             else
             {
-                if(stk.Count > 0 && stk.Peek().max >= currMin) return false;
-                stk.Push((currMin, currMax));
+                if(prevMax >= currMin) return false;
+                prevMin = currMin;
+                prevMax = currMax;
                 currMax = num;
                 currMin = num;
                 prevBit = setBit;
             }
         }
         
-        if(stk.Count > 0 && stk.Peek().max >= currMin) return false;
+        if(prevMax >= currMin) return false;
         return true;
     }
 }
