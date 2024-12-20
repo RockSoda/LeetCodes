@@ -28,9 +28,9 @@ public class Solution
     {
         if (!map.ContainsKey(level) || map[level].Count == 0) return;
 
-        node.left = new TreeNode(map[level].First());
+        node.left.val = map[level].First();
         map[level].RemoveAt(0);
-        node.right = new TreeNode(map[level].First());
+        node.right.val = map[level].First();
         map[level].RemoveAt(0);
 
         BuildTree(node.left, map, level+1);
@@ -46,8 +46,7 @@ public class Solution
             if(i % 2 == 0) continue;
             map[i].Reverse();
         }
-        var output = new TreeNode(map[0].First());
-        BuildTree(output, map, 1);
-        return output;
+        BuildTree(root, map, 1);
+        return root;
     }
 }
