@@ -2,21 +2,27 @@ public class Solution
 {
     public double FindMedianSortedArrays(int[] nums1, int[] nums2) 
     {
-        var list = new List<int>();
-        
-        int index1 = 0;
-        int index2 = 0;
+        int index1 = 0, index2 = 0, totalIdx = 0, prevMid = -1, totalLen = nums1.Length + nums2.Length;
+        bool isEven = totalLen % 2 == 0;
+
         while(index1 < nums1.Length || index2 < nums2.Length)
         {
-            if(index1 >= nums1.Length) list.Add(nums2[index2++]);
-            else if(index2 >= nums2.Length) list.Add(nums1[index1++]);
+            var curr = -1;
+
+            if(index1 >= nums1.Length) curr = nums2[index2++];
+            else if(index2 >= nums2.Length) curr = nums1[index1++];
             else
             {
-                if(nums1[index1] < nums2[index2]) list.Add(nums1[index1++]);
-                else list.Add(nums2[index2++]);
+                if(nums1[index1] < nums2[index2]) curr = nums1[index1++];
+                else curr = nums2[index2++];
             }
+
+            if(totalIdx == totalLen / 2 - 1) prevMid = curr;
+            else if(totalIdx == totalLen / 2) return isEven ? (double)(prevMid + curr) / 2 : (double)curr;
+
+            totalIdx++;
         }
         
-        return list.Count % 2 == 0 ? (double)(list[list.Count / 2]+list[list.Count / 2 - 1]) / 2 : (double)(list[list.Count / 2]);
+        return -1;
     }
 }
