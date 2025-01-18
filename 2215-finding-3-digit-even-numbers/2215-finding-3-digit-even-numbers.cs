@@ -17,15 +17,10 @@ public class Solution
             {
                 if(i == j) continue;
 
-                var sb = new StringBuilder();
-                sb.Append((char)(digits[i]+'0'));
-                sb.Append((char)(digits[j]+'0'));
                 foreach((int even, int idx) in evens)
                 {
                     if(idx == i || idx == j) continue;
-                    var sbTmp = new StringBuilder(sb.ToString());
-                    sbTmp.Append((char)(even+'0'));
-                    set.Add(int.Parse(sbTmp.ToString()));
+                    set.Add(digits[i]*100+digits[j]*10+even);
                 }
             }
         }
