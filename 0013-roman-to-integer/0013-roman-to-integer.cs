@@ -11,14 +11,16 @@ public class Solution
         map['D' - 'A'] = 500;
         map['M' - 'A'] = 1000;
 
+        int GetVal(char c) => map[c - 'A'];
+
         int output = 0;
         for(int i = s.Length-1; i >= 0; i--)
         {
-            int tmp = map[s[i] - 'A'];
+            int tmp = GetVal(s[i]);
             
             if(i != 0)
             {
-                int prev = map[s[i-1] - 'A'];
+                int prev = GetVal(s[i-1]);
 
                 if(prev < tmp)
                 {
