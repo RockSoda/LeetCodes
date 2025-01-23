@@ -23,11 +23,10 @@ public class Solution
             isCommunicating = true;
         }
 
-        if(isCommunicating)
-        {
-            grid[i][j] = -1;
-            _communicatedServers++;
-        }
+        if (!isCommunicating) return;
+
+        grid[i][j] = -1;
+        _communicatedServers++;
     }
 
     public int CountServers(int[][] grid) 
