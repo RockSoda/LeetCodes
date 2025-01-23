@@ -1,38 +1,24 @@
 public class Solution 
 {
-    private int Mapping(char c)
-    {
-        switch(c)
-        {
-            case 'I':
-                return 1;
-            case 'V':
-                return 5;
-            case 'X':
-                return 10;
-            case 'L':
-                return 50;
-            case 'C':
-                return 100;
-            case 'D':
-                return 500;
-            case 'M':
-                return 1000;
-            default:
-                return 0;
-        }
-    }
-
     public int RomanToInt(string s) 
     {
+        int[] map = new int[26];
+        map['I' - 'A'] = 1;
+        map['V' - 'A'] = 5;
+        map['X' - 'A'] = 10;
+        map['L' - 'A'] = 50;
+        map['C' - 'A'] = 100;
+        map['D' - 'A'] = 500;
+        map['M' - 'A'] = 1000;
+
         int output = 0;
         for(int i = s.Length-1; i >= 0; i--)
         {
-            int tmp = Mapping(s[i]);
+            int tmp = map[s[i] - 'A'];
             
             if(i != 0)
             {
-                int prev = Mapping(s[i-1]);
+                int prev = map[s[i-1] - 'A'];
 
                 if(prev < tmp)
                 {
