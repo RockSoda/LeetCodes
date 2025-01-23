@@ -1,6 +1,6 @@
 public class Solution 
 {
-    private void FlipCommunicated(int[][] grid, int i, int j, ref int communicatedServers)
+    private int GetCommunicatedServerse(int[][] grid, int i, int j, int communicatedServers)
     {   
         bool isCommunicating = false;
         for(int row = 0; row < grid.Length; row++)
@@ -21,10 +21,11 @@ public class Solution
             isCommunicating = true;
         }
 
-        if (!isCommunicating) return;
+        if (!isCommunicating) return communicatedServers;
 
         grid[i][j] = -1;
         communicatedServers++;
+        return communicatedServers;
     }
 
     public int CountServers(int[][] grid) 
@@ -36,7 +37,7 @@ public class Solution
             for(int j = 0; j < grid[i].Length; j++)
             {
                 if(grid[i][j] != 1) continue;
-                FlipCommunicated(grid, i, j, ref communicatedServers);
+                communicatedServers = GetCommunicatedServerse(grid, i, j, communicatedServers);
             }
         }
 
