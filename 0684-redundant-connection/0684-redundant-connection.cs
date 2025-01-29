@@ -14,20 +14,19 @@ public class Solution
             map[num1].Add(num0);
         }
 
-        bool CanReach(int start, int end, HashSet<int> visited, Dictionary<(int, int), bool> memo)
+        bool CanReach(int start, int end, HashSet<int> visited)
         {
             if(!map.ContainsKey(start)) return false;
             if(map[start].Contains(end)) return true;
             if(visited.Contains(start)) return false;
-            if(memo.ContainsKey((start, end))) return memo[(start, end)];
 
             visited.Add(start);
             bool isReached = false;
             foreach(var num in map[start])
             {
-                isReached = isReached || CanReach(num, end, visited, memo);
+                isReached = isReached || CanReach(num, end, visited);
             }
-            return memo[(start, end)] = isReached;
+            return isReached;
         }
 
         void RemoveKeyVal(int num0, int num1)
@@ -54,7 +53,7 @@ public class Solution
             var num1 = edges[i][1];
 
             RemoveKeyVal(num0, num1);
-            if(CanReach(num0, num1, new HashSet<int>(), new Dictionary<(int, int), bool>())) return edges[i];
+            if(CanReach(num0, num1, new HashSet<int>())) return edges[i];
             AddKeyVal(num0, num1);
         }
 
