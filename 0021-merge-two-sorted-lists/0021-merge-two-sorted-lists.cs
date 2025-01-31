@@ -11,13 +11,6 @@
  */
 public class Solution 
 {
-    private void AddToList(ref ListNode inNode, ref ListNode outNode)
-    {
-        outNode.next = new ListNode(inNode.val);
-        outNode = outNode.next;
-        inNode = inNode.next;
-    }
-    
     public ListNode MergeTwoLists(ListNode list1, ListNode list2) 
     {
         ListNode cur1 = list1;
@@ -25,16 +18,23 @@ public class Solution
         
         ListNode head = new ListNode();
         ListNode cur = head;
-        
-        while(cur1 != null && cur2 != null)
+
+        void AddToList(ref ListNode node)
         {
-            if(cur1.val > cur2.val) AddToList(ref cur2, ref cur);
-            else AddToList(ref cur1, ref cur);
+            cur.next = new ListNode(node.val);
+            cur = cur.next;
+            node = node.next;
         }
 
-        while(cur1 != null) AddToList(ref cur1, ref cur);
+        while(cur1 != null && cur2 != null)
+        {
+            if(cur1.val > cur2.val) AddToList(ref cur2);
+            else AddToList(ref cur1);
+        }
+
+        while(cur1 != null) AddToList(ref cur1);
         
-        while(cur2 != null) AddToList(ref cur2, ref cur);
+        while(cur2 != null) AddToList(ref cur2);
         
         return head.next;
 
