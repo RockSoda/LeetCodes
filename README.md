@@ -31,6 +31,7 @@ My LeetCode solutions
 |  |
 | ------- |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
+| [3429-special-array-i](https://github.com/RockSoda/LeetCodes/tree/master/3429-special-array-i) |
 ## Hash Table
 |  |
 | ------- |
