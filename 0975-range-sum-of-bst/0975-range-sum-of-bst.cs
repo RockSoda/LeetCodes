@@ -22,11 +22,8 @@ public class Solution
         if(root.val > high)
             return RangeSumBST(root.left, low, high);
 
-        var output = root.val;
-
-        output += RangeSumBST(root.right, low, high);
-        output += RangeSumBST(root.left, low, high);
-
-        return output;
+        return root.val + 
+               RangeSumBST(root.right, low, high) +
+               RangeSumBST(root.left, low, high);
     }
 }
