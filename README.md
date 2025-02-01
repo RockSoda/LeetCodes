@@ -8,11 +8,13 @@ My LeetCode solutions
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
+| [0975-range-sum-of-bst](https://github.com/RockSoda/LeetCodes/tree/master/0975-range-sum-of-bst) |
 ## Depth-First Search
 |  |
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
+| [0975-range-sum-of-bst](https://github.com/RockSoda/LeetCodes/tree/master/0975-range-sum-of-bst) |
 ## Breadth-First Search
 |  |
 | ------- |
@@ -22,11 +24,13 @@ My LeetCode solutions
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
+| [0975-range-sum-of-bst](https://github.com/RockSoda/LeetCodes/tree/master/0975-range-sum-of-bst) |
 ## Binary Tree
 |  |
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
+| [0975-range-sum-of-bst](https://github.com/RockSoda/LeetCodes/tree/master/0975-range-sum-of-bst) |
 ## Array
 |  |
 | ------- |
