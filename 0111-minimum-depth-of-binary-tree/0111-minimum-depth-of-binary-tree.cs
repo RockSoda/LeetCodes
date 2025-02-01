@@ -11,22 +11,16 @@
  *     }
  * }
  */
-public class Solution 
-{
+public class Solution {
+    
     private bool IsLeaf(TreeNode node) => node.left == null && node.right == null;
-
-    private int Traverse(TreeNode root, int level)
+    
+    public int MinDepth(TreeNode root, bool isTop = true) 
     {
-        if(root == null) return 100001;
-
-        if(IsLeaf(root)) return level+1;
-
-        return Math.Min(Traverse(root.left, level+1), Traverse(root.right, level+1));
-
-    }
-    public int MinDepth(TreeNode root)
-    {
-        var output = Traverse(root, 0);
-        return output == 100001 ? 0 : output;
+        if(root == null) return isTop ? 0 : (int)Math.Pow(10,5)+1;
+        
+        if(IsLeaf(root)) return 1;
+        
+        return Math.Min(MinDepth(root.left, false)+1, MinDepth(root.right, false)+1);
     }
 }
