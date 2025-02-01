@@ -7,10 +7,12 @@ My LeetCode solutions
 |  |
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
+| [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
 ## Depth-First Search
 |  |
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
+| [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
 ## Breadth-First Search
 |  |
 | ------- |
@@ -19,10 +21,12 @@ My LeetCode solutions
 |  |
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
+| [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
 ## Binary Tree
 |  |
 | ------- |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
+| [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
 ## Array
 |  |
 | ------- |
@@ -39,4 +43,8 @@ My LeetCode solutions
 |  |
 | ------- |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
+## Stack
+|  |
+| ------- |
+| [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
 <!---LeetCode Topics End-->
