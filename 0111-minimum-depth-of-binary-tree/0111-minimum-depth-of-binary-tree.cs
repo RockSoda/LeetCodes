@@ -15,12 +15,16 @@ public class Solution {
     
     private bool IsLeaf(TreeNode node) => node.left == null && node.right == null;
     
-    public int MinDepth(TreeNode root, bool isTop = true) 
+    public int MinDepth(TreeNode root) 
     {
-        if(root == null) return isTop ? 0 : (int)Math.Pow(10,5)+1;
+        if(root == null) return 0;
         
         if(IsLeaf(root)) return 1;
+
+        if(root.left == null) return 1+MinDepth(root.right);
+
+        if(root.right == null) return 1+MinDepth(root.left);
         
-        return Math.Min(MinDepth(root.left, false)+1, MinDepth(root.right, false)+1);
+        return 1+Math.Min(MinDepth(root.left), MinDepth(root.right));
     }
 }
