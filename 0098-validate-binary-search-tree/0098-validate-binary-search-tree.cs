@@ -13,19 +13,18 @@
  */
 public class Solution 
 {
-    private bool IsValidBST(TreeNode node, long up, long down) 
+    public bool IsValidBST(TreeNode node, long up = long.MaxValue, long down = long.MinValue) 
     {
         if(node == null) return true;
         
         if(node.val >= up || node.val <= down) return false;
         
+        if(node.left == null && node.right == null) return true;
+
+        if(node.left == null) return IsValidBST(node.right, up, node.val);
+
+        if(node.right == null) return IsValidBST(node.left, node.val, down);
+
         return IsValidBST(node.left, node.val, down) && IsValidBST(node.right, up, node.val);
-    }
-    
-    public bool IsValidBST(TreeNode root) 
-    {
-        if(root == null) return true;
-        
-        return IsValidBST(root, long.MaxValue, long.MinValue);
     }
 }
