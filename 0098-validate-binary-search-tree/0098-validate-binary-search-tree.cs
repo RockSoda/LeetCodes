@@ -19,12 +19,6 @@ public class Solution
         
         if(node.val >= up || node.val <= down) return false;
         
-        if(node.left == null && node.right == null) return true;
-
-        if(node.left == null) return IsValidBST(node.right, up, node.val);
-
-        if(node.right == null) return IsValidBST(node.left, node.val, down);
-
         return IsValidBST(node.left, node.val, down) && IsValidBST(node.right, up, node.val);
     }
 }
