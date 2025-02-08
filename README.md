@@ -6,6 +6,7 @@ My LeetCode solutions
 ## Tree
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
@@ -13,6 +14,7 @@ My LeetCode solutions
 ## Depth-First Search
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
@@ -25,12 +27,14 @@ My LeetCode solutions
 ## Binary Search Tree
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
 | [0975-range-sum-of-bst](https://github.com/RockSoda/LeetCodes/tree/master/0975-range-sum-of-bst) |
 ## Binary Tree
 |  |
 | ------- |
+| [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
