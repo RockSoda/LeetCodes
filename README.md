@@ -7,6 +7,7 @@ My LeetCode solutions
 |  |
 | ------- |
 | [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
+| [0101-symmetric-tree](https://github.com/RockSoda/LeetCodes/tree/master/0101-symmetric-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
@@ -15,6 +16,7 @@ My LeetCode solutions
 |  |
 | ------- |
 | [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
+| [0101-symmetric-tree](https://github.com/RockSoda/LeetCodes/tree/master/0101-symmetric-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
@@ -22,6 +24,7 @@ My LeetCode solutions
 ## Breadth-First Search
 |  |
 | ------- |
+| [0101-symmetric-tree](https://github.com/RockSoda/LeetCodes/tree/master/0101-symmetric-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 ## Binary Search Tree
@@ -35,6 +38,7 @@ My LeetCode solutions
 |  |
 | ------- |
 | [0098-validate-binary-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0098-validate-binary-search-tree) |
+| [0101-symmetric-tree](https://github.com/RockSoda/LeetCodes/tree/master/0101-symmetric-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/RockSoda/LeetCodes/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0799-minimum-distance-between-bst-nodes](https://github.com/RockSoda/LeetCodes/tree/master/0799-minimum-distance-between-bst-nodes) |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
