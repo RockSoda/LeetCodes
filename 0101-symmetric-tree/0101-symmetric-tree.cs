@@ -13,15 +13,16 @@
  */
 public class Solution 
 {
-    private bool IsSym(TreeNode left, TreeNode right)
+    private bool Traverse(TreeNode nodeLeft, TreeNode nodeRight)
     {
-        if(left == null && right == null) return true;
-        if(left == null || right == null) return false;
-        if(left.val != right.val) return false;
-        
-        return IsSym(left.left, right.right) && IsSym(left.right, right.left);
+        if (nodeLeft == null && nodeRight == null) return true;
+
+        if (nodeLeft == null || nodeRight == null) return false;
+
+        if (nodeRight.val != nodeLeft.val) return false;
+
+        return Traverse(nodeLeft.left, nodeRight.right) && Traverse(nodeLeft.right, nodeRight.left);
     }
-    
-    public bool IsSymmetric(TreeNode root) =>
-        IsSym(root.left, root.right);
+
+    public bool IsSymmetric(TreeNode root) => Traverse(root.left, root.right);
 }
