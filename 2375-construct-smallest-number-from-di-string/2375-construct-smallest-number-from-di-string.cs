@@ -12,7 +12,6 @@ public class Solution
             if (i != n && pattern[i] == 'D') continue;
 
             Array.Reverse(sequence, previousIndex, i - previousIndex + 1);
-            Console.WriteLine($"i = {i}, idx = {previousIndex} len = {i - previousIndex + 1}");
             previousIndex = i + 1;
         }
 
