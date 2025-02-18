@@ -2,47 +2,20 @@ public class Solution
 {
     public string SmallestNumber(string pattern) 
     {
-        var min = string.Empty;
-        bool IsValidNum(string str)
+        var n = pattern.Length;
+        var sequence = new char[n + 1];
+        var previousIndex = 0;
+        for (var i = 0; i <= n; i++)
         {
-            if(!string.IsNullOrEmpty(min) && string.Compare(str, min) > 0) return false;
+            sequence[i] = (char)(i + '1');
 
-            for(int i = 0 ; i< pattern.Length; i++)
-            {
-                var curr = pattern[i];
-                if(curr == 'I')
-                {
-                    if(str[i] >= str[i+1]) return false;
-                }
-                else //curr == 'D'
-                {
-                    if(str[i] <= str[i+1]) return false;
-                }
-            }
-            return true;
+            if (i != n && pattern[i] == 'D') continue;
+
+            Array.Reverse(sequence, previousIndex, i - previousIndex + 1);
+            Console.WriteLine($"i = {i}, idx = {previousIndex} len = {i - previousIndex + 1}");
+            previousIndex = i + 1;
         }
 
-        void FindMinFromAllValidNums(int n, string str)
-        {
-            if (str.Length >= n) 
-            {
-                if(!IsValidNum(str)) return;
-
-                if(string.IsNullOrEmpty(min) || string.Compare(min, str) > 0) min = str;
-                return;
-            }
-
-            for(int i = 1; i <= n; i++)
-            {
-                var iStr = i.ToString();
-                if(str.Contains(iStr)) continue;
-
-                FindMinFromAllValidNums(n, str+iStr);
-            }
-        }
-
-        FindMinFromAllValidNums(pattern.Length+1, string.Empty);
-        
-        return min;
+        return new string(sequence);
     }
 }
