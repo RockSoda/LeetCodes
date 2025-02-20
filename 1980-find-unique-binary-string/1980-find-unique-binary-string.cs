@@ -10,7 +10,7 @@ public class Solution
         {
             var curr = Convert.ToString(i, 2).PadLeft(bits, '0');
             if (!set.Contains(curr)) return curr;
-        }
+        } 
         
         return string.Empty;
     }
