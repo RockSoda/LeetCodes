@@ -2,25 +2,17 @@ public class Solution
 {
     public int MaxAbsoluteSum(int[] nums) 
     {
-        var len = nums.Length;
-        var prefixSum = new int[len];
-        prefixSum[0] = nums[0];
-
-        for(int i = 1; i < len; i++) prefixSum[i] = prefixSum[i-1] + nums[i];
-
-        int absSum = 0;
-        for(int i = len-1; i >= 0; i--)
-        {   
-            absSum = Math.Max(absSum, Math.Abs(prefixSum[i]));
-            bool isBreaked = false;
-            for(int j = 0; j < len; j++)
-            {
-                absSum = Math.Max(absSum, Math.Abs(prefixSum[i]-prefixSum[j]));
-                if(j > i) break;
-            }
-            if(isBreaked) break;
+        int currMin = 0, currMax = 0, min = 0, max = 0;
+        for(int i = 0; i < nums.Length; i++)
+        {
+            currMin += nums[i];
+            currMax += nums[i];
+            if(currMin > 0) currMin = 0;
+            if(currMax < 0) currMax = 0;
+             
+            min = Math.Min(min, currMin);
+            max = Math.Max(max, currMax);
         }
-
-        return absSum;
+        return Math.Max(Math.Abs(min), max);
     }
 }
