@@ -2,19 +2,29 @@ public class Solution
 {
     public int[] PivotArray(int[] nums, int pivot) 
     {
-        var less = new List<int>();
-        var greater = new List<int>();
-        int numOfPivot = 0;
-        
+        int idxLess = 0, idxEqual = 0, idxGreater = 0;
+        var list = new List<int>();
         foreach(var num in nums)
         {
-            if(num < pivot) less.Add(num);
-            else if(num > pivot) greater.Add(num);
-            else numOfPivot++;
+            if(num > pivot)
+            {
+                list.Insert(idxGreater, num);
+                idxGreater++;
+            }
+            else if(num == pivot)
+            {
+                list.Insert(idxEqual, num);
+                idxEqual++;
+                idxGreater++;
+            }
+            else
+            {
+                list.Insert(idxLess, num);
+                idxLess++;
+                idxEqual++;
+                idxGreater++;
+            }
         }
-
-        less.AddRange(Enumerable.Repeat(pivot, numOfPivot));
-        less.AddRange(greater);
-        return less.ToArray();
+        return list.ToArray();
     }
 }
