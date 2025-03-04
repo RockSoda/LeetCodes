@@ -1,30 +1,35 @@
 public class Solution 
 {
-    private string ConvertFromDeci(int base1, int inputNum)
+    public string ToTrenary(int value) 
     {
-        char reVal(int num)
-        {
-            if (num >= 0 && num <= 9)
-                return (char)(num + '0');
-            else
-                return (char)(num - 10 + 'A');
-        }
+      if (value == 0) return "";
 
-        string s = "";
-    
-        // Convert input number is given 
-        // base by repeatedly dividing it
-        // by base and taking remainder
-        while (inputNum > 0)
-        {
-            s += reVal(inputNum % base1);
-            inputNum /= base1;
-        }
-        char[] res = s.ToCharArray();
-    
-        Array.Reverse(res);
-        return new string(res);
+      StringBuilder Sb = new StringBuilder();
+      Boolean signed = false;
+
+      if (value < 0) 
+      {
+        signed = true; 
+        value = -value;
+      }
+
+      while (value > 0) 
+      {
+        Sb.Insert(0, value % 3);
+        value /= 3;
+      }
+
+      if (signed) Sb.Insert(0, '-');
+
+      return Sb.ToString();
     }
-
-    public bool CheckPowersOfThree(int n) => !ConvertFromDeci(3, n).Any(c => c == '2');
+    
+    public bool CheckPowersOfThree(int n) 
+    {
+        var ternary = ToTrenary(n);
+        
+        foreach(char c in ternary) if(c == '2') return false;
+        
+        return true;
+    }
 }
