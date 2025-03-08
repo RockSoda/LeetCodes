@@ -64,4 +64,12 @@ My LeetCode solutions
 |  |
 | ------- |
 | [0933-increasing-order-search-tree](https://github.com/RockSoda/LeetCodes/tree/master/0933-increasing-order-search-tree) |
+## String
+|  |
+| ------- |
+| [2463-minimum-recolors-to-get-k-consecutive-black-blocks](https://github.com/RockSoda/LeetCodes/tree/master/2463-minimum-recolors-to-get-k-consecutive-black-blocks) |
+## Sliding Window
+|  |
+| ------- |
+| [2463-minimum-recolors-to-get-k-consecutive-black-blocks](https://github.com/RockSoda/LeetCodes/tree/master/2463-minimum-recolors-to-get-k-consecutive-black-blocks) |
 <!---LeetCode Topics End-->
