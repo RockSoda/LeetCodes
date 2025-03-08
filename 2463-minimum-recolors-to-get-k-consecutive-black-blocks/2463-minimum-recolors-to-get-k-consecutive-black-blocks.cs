@@ -2,11 +2,15 @@ public class Solution
 {
     public int MinimumRecolors(string blocks, int k) 
     {
-        var min = blocks.Length;
-        for(int i = k; i <= blocks.Length; i++)
+        int min = blocks.Length, numOfW = 0;
+        for(int i = 0; i < blocks.Length; i++)
         {
-            var substr = blocks.Substring(i-k, k);
-            min = Math.Min(min, substr.Count(c => c == 'W'));
+            if(blocks[i] == 'W') numOfW++;
+
+            if(i+1 < k) continue;
+
+            min = Math.Min(min, numOfW);
+            if(blocks[i-k+1] == 'W') numOfW--;
         }
         return min;
     }
