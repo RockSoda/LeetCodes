@@ -5,13 +5,15 @@ public class Solution
         var map = new int[]{ 0, 0, 0 };
         int left = 0, ans = 0;
 
+        int GetIdx(char c) => c - 'a';
+
         for(int right = 0; right < s.Length; right++)
         {
-            map[s[right] - 'a']++;
-            while(map['a'-'a'] > 0 && map['b'-'a'] > 0 && map['c'-'a'] > 0)
+            map[GetIdx(s[right])]++;
+            while(map[GetIdx('a')] > 0 && map[GetIdx('b')] > 0 && map[GetIdx('c')] > 0)
             {
                 ans += s.Length - right;
-                map[s[left++] - 'a']--;
+                map[GetIdx(s[left++])]--;
             }
         }
         return ans;
