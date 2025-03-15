@@ -1,6 +1,5 @@
 public class Solution 
 {
-    private Dictionary<int, int> memo;
     private bool Traverse(int[] nums, int k, int idx, int cap)
     {
         if(idx >= nums.Length)
