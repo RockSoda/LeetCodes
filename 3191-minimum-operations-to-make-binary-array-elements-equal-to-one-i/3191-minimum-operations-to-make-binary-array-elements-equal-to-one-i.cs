@@ -20,8 +20,6 @@ public class Solution
             ans++;
         }
 
-        if(nums[nums.Length-1] == 0 || nums[nums.Length-2] == 0) return -1;
-
-        return ans;
+        return nums[^1] == 0 || nums[^2] == 0 ? -1 : ans;
     }
 }
