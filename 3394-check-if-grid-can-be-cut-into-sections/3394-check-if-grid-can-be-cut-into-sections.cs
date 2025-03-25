@@ -2,25 +2,25 @@ public class Solution
 {
     public bool CheckValidCuts(int n, int[][] rectangles) 
     {
-        bool CheckVertical()
+        int GetNumOfCuts(List<(int start, int end)> list)
         {
-            var sorted = rectangles.OrderBy(rect => rect[0]).ThenByDescending(rect => rect[2]);
-            (int l, int r) prev = (-1, -1);
+            var sorted = list.OrderBy(a => a.start).ThenByDescending(a => a.end);
+
+            (int start, int end) prev = (-1, -1);
             int numOfCuts = 0;
-            foreach(var rect in sorted)
+            foreach((int start, int end) curr in sorted)
             {
-                (int l, int r) curr = (rect[0], rect[2]);
                 if(prev == (-1, -1))
                 {
                     prev = curr;
                     continue;
                 }
 
-                if(curr.l == prev.l) continue;
+                if(curr.start == prev.start) continue;
 
-                if(prev.r > curr.l) 
+                if(prev.end > curr.start) 
                 {
-                    prev = (prev.l, Math.Max(prev.r, curr.r));
+                    prev = (prev.start, Math.Max(prev.end, curr.end));
                     continue;
                 }
 
@@ -28,36 +28,21 @@ public class Solution
                 prev = curr;
             }
             
-            return numOfCuts >= 2;
+            return numOfCuts;
+        }
+
+        bool CheckVertical()
+        {
+            var selected = rectangles.Select(rect => (rect[0], rect[2])).ToList();
+
+            return GetNumOfCuts(selected) >= 2;
         }
 
         bool CheckHorizontal()
         {
-            var sorted = rectangles.OrderBy(rect => rect[1]).ThenByDescending(rect => rect[3]);
-            (int d, int u) prev = (-1, -1);
-            int numOfCuts = 0;
-            foreach(var rect in sorted)
-            {
-                (int d, int u) curr = (rect[1], rect[3]);
-                if(prev == (-1, -1))
-                {
-                    prev = curr;
-                    continue;
-                }
+            var selected = rectangles.Select(rect => (rect[1], rect[3])).ToList();
 
-                if(curr.d == prev.d) continue;
-
-                if(prev.u > curr.d)
-                {
-                    prev = (prev.d, Math.Max(prev.u, curr.u));
-                    continue;
-                }
-
-                numOfCuts++;
-                prev = curr;
-            }
-
-            return numOfCuts >= 2;
+            return GetNumOfCuts(selected) >= 2;
         }
 
         return CheckVertical() || CheckHorizontal();
