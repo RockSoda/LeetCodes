@@ -10,11 +10,12 @@ public class Solution
 
             foreach(var kvp in map)
             {
-                if(kvp.Value < nums.Count / 2 + 1) continue;
-                return (kvp.Key, kvp.Value);
+                if(IsDominant(kvp.Value, nums.Count)) return (kvp.Key, kvp.Value);
             }
             return (-1, -1);
         }
+
+        bool IsDominant(int freq, int len) => freq >= len / 2 + 1;
 
         (int dominant, int freq) = GetDominantAndFreq();
 
@@ -32,7 +33,7 @@ public class Solution
             leftLen++;
             rightLen--;
 
-            if(leftFreq >= leftLen / 2 + 1 && rightFreq >= rightLen / 2 + 1) return i;
+            if(IsDominant(leftFreq, leftLen) && IsDominant(rightFreq, rightLen)) return i;
         }
 
         return -1;
