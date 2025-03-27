@@ -24,14 +24,14 @@ public class Solution
         for(int i = 0; i < nums.Count; i++)
         {
             int curr = nums[i];
-            if(curr == dominant)
-            {
-                leftFreq++;
-                rightFreq--;
-            }
 
             leftLen++;
             rightLen--;
+
+            if(curr != dominant) continue;
+            
+            leftFreq++;
+            rightFreq--;
 
             if(IsDominant(leftFreq, leftLen) && IsDominant(rightFreq, rightLen)) return i;
         }
