@@ -24,8 +24,8 @@ public class Solution
             LoadIntAry(low, ary);
 
             var half = ary.Length / 2;
-            var firstHalf = ary[..(ary.Length/2)].Sum();
-            var secondHalf = ary[(ary.Length/2)..].Sum();
+            var firstHalf = ary[..half].Sum();
+            var secondHalf = ary[half..].Sum();
             if(firstHalf == secondHalf) ans++;
         }
 
