@@ -2,15 +2,17 @@ public class Solution
 {
     public int CountSymmetricIntegers(int low, int high) 
     {
-        void LoadIntAry(int num, int[] ary)
+        int[] GetIntAry(int num, int len)
         {
-            int idx = ary.Length-1;
+            var ary = new int[len];
+            int idx = len-1;
             while(num > 0)
             {
                 var lastDigit = num % 10;
                 ary[idx--] = lastDigit;
                 num /= 10;
             }
+            return ary;
         }
 
         var ans = 0;
@@ -20,8 +22,7 @@ public class Solution
             int len = low.ToString().Length;
             if((len & 1) == 1) continue;
 
-            var ary = new int[len];
-            LoadIntAry(low, ary);
+            var ary = GetIntAry(low, len);
 
             var half = ary.Length / 2;
             var firstHalf = ary[..half].Sum();
