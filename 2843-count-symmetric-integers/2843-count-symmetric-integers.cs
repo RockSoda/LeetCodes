@@ -2,16 +2,30 @@ public class Solution
 {
     public int CountSymmetricIntegers(int low, int high) 
     {
+        void LoadIntAry(int num, int[] ary)
+        {
+            int idx = ary.Length-1;
+            while(num > 0)
+            {
+                var lastDigit = num % 10;
+                ary[idx--] = lastDigit;
+                num /= 10;
+            }
+        }
+
         var ans = 0;
 
         for(; low <= high; low++)
         {
-            var curr = low.ToString();
-            if((curr.Length & 1) == 1) continue;
+            int len = low.ToString().Length;
+            if((len & 1) == 1) continue;
 
-            var half = curr.Length / 2;
-            var firstHalf = curr.Take(half).Select(c => c-'0').Sum();
-            var secondHalf = curr.Skip(half).Take(half).Select(c => c-'0').Sum();
+            var ary = new int[len];
+            LoadIntAry(low, ary);
+
+            var half = ary.Length / 2;
+            var firstHalf = ary[..(ary.Length/2)].Sum();
+            var secondHalf = ary[(ary.Length/2)..].Sum();
             if(firstHalf == secondHalf) ans++;
         }
 
