@@ -24,8 +24,9 @@ public class Solution
         var freqMap = new Dictionary<int, int>();
         foreach(var kvp in map)
         {
-            freqMap[kvp.Value] = freqMap.ContainsKey(kvp.Value) ? freqMap[kvp.Value]+1 : 1;
-            maxSize = Math.Max(maxSize, kvp.Value);
+            var key = kvp.Value;
+            freqMap[key] = freqMap.ContainsKey(key) ? freqMap[key]+1 : 1;
+            maxSize = Math.Max(maxSize, key);
         }
 
         return freqMap[maxSize];
