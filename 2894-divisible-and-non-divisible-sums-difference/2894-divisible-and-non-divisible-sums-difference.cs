@@ -4,10 +4,13 @@ public class Solution
     {
         var sum = n * (n + 1) / 2;
         var num2 = 0;
-        for(int i = 1; i <= n; i++)
+        var multi = 1;
+
+        while(m * multi <= n)
         {
-            if(i % m == 0) num2 += i;
+            num2 += m * multi++;
         }
+
         return sum - 2 * num2;
     }
 }
