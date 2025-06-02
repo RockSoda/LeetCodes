@@ -24,7 +24,6 @@ public class Solution
             sum -= candies[i];
             candies[i] = candies[i-1]+1;
             sum += candies[i];
-
         }
 
         return sum;
