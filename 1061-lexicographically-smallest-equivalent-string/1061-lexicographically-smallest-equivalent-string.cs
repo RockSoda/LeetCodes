@@ -13,13 +13,13 @@ public class Solution
 
         void LoadSmallestMap()
         {
-            var visited = new HashSet<int>();
+            var visited = new bool[26];
             int FindSmallest(int key)
             {
                 var min = key;
-                if(visited.Contains(key)) return min;
+                if(visited[key]) return min;
 
-                visited.Add(key);
+                visited[key] = true;
                 if(smallestMap[key] != 0) return smallestMap[key];
 
                 for(int i = 0; i < map[key].Length; i++)
@@ -33,7 +33,7 @@ public class Solution
             for(int i = 0; i < map.Length; i++)
             {
                 smallestMap[i] = FindSmallest(i);
-                visited.Clear();
+                Array.Fill(visited, false);
             }
         }
 
