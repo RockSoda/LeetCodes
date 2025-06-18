@@ -8,12 +8,10 @@ public class Solution
         
         for (int i = 0; i < size; i += 3) 
         {
-            if (i + 2 < size && nums[i + 2] - nums[i] <= k) 
-            {
-                result[groupIndex] = new int[]{ nums[i], nums[i + 1], nums[i + 2] };
-                groupIndex++;
-            }
-            else return new int[0][];
+            if (i + 2 >= size || nums[i + 2] - nums[i] > k) return new int[0][];
+            
+            result[groupIndex] = new int[]{ nums[i], nums[i + 1], nums[i + 2] };
+            groupIndex++;
         }
         
         return result;
