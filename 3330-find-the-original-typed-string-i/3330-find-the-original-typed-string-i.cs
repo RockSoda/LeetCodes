@@ -2,18 +2,20 @@ public class Solution
 {
     public int PossibleStringCount(string word) 
     {
-        int possibility = 1;
-        for(int i = 0; i < word.Length; i++)
+        int possibility = 1, counter = 1;
+        var prev = word[0];
+        for(int i = 1; i < word.Length; i++)
         {
-            int counter = 1;
-            for(int j = i + 1; j < word.Length; j++)
+            var curr = word[i];
+
+            if (prev == curr) counter++;
+            else 
             {
-                if(word[i] != word[j]) break;
-                i = j;
-                counter++;
+                possibility += counter - 1;
+                counter = 1;
+                prev = curr;
             }
-            possibility += counter-1;
         }
-        return possibility;
+        return counter > 1 ? possibility + counter - 1 : possibility;
     }
 }
