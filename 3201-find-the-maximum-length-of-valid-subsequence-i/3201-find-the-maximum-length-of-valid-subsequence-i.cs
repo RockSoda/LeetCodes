@@ -10,8 +10,11 @@ public class Solution
 
             foreach(var num in nums)
             {
-                if(IsEven(num) && isEvenSeq) len++;
-                else if(!IsEven(num) && !isEvenSeq) len++;
+                bool isAligned = (IsEven(num) && isEvenSeq) || (!IsEven(num) && !isEvenSeq);
+                
+                if(!isAligned) continue;
+
+                len++;
             }
 
             return len;
@@ -20,7 +23,7 @@ public class Solution
         int FindFirstIdx(bool isStartWithEven)
         {
             var firstIdx = -1;
-            
+
             for(int i = 0; i < nums.Length; i++)
             {
                 bool isAligned = (IsEven(nums[i]) && isStartWithEven) || (!IsEven(nums[i]) && !isStartWithEven);
