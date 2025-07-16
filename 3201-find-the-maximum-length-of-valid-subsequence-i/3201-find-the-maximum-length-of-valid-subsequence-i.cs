@@ -20,22 +20,20 @@ public class Solution
         int FindFirstIdx(bool isStartWithEven)
         {
             var firstIdx = -1;
+            
             for(int i = 0; i < nums.Length; i++)
             {
-                if(IsEven(nums[i]) && isStartWithEven)
-                {
-                    firstIdx = i;
-                    break;
-                }
-                else if(!IsEven(nums[i]) && !isStartWithEven)
-                {
-                    firstIdx = i;
-                    break;
-                }
+                bool isAligned = (IsEven(nums[i]) && isStartWithEven) || (!IsEven(nums[i]) && !isStartWithEven);
+
+                if(!isAligned) continue;
+
+                firstIdx = i;
+                break;
             }
+
             return firstIdx;
         }
-        
+
         int GetAlt(bool isStartWithEven)
         {
             var firstIdx = FindFirstIdx(isStartWithEven);
