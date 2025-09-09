@@ -16,6 +16,9 @@ public class Solution
 
         var firstPiece = 0;
         var twiceThePiece = arr.Sum();
+        
+        if(twiceThePiece % 3 != 0) return false;
+
         for(int i = 0; i < arr.Length-1; i++)
         {
             firstPiece += arr[i];
