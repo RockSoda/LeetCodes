@@ -2,9 +2,11 @@ public class Solution
 {
     public string SortVowels(string s) 
     {
-        
-        bool IsVowel(char c) => "aeiouAEIOU".IndexOf(c) >= 0;
-        
+        var vowelSet = new HashSet<char>
+        {
+            'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'
+        };
+
         var vowels = new List<char>();
         var indexes = new List<int>();
         
@@ -12,7 +14,7 @@ public class Solution
         
         for (int i = 0; i < s.Length; i++)
         {
-            if (IsVowel(s[i]))
+            if (vowelSet.Contains(s[i]))
             {
                 vowels.Add(s[i]);
                 indexes.Add(i);
