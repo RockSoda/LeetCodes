@@ -10,7 +10,7 @@ public class Solution
         var vowels = new List<char>();
         var indexes = new List<int>();
         
-        var charAry = s.ToArray();
+        var charAry = s.ToCharArray();
         
         for (int i = 0; i < charAry.Length; i++)
         {
