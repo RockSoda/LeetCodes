@@ -10,16 +10,15 @@ public class Solution
         var vowels = new List<char>();
         var indexes = new List<int>();
         
-        var charAry = new char[s.Length];
+        var charAry = s.ToArray();
         
-        for (int i = 0; i < s.Length; i++)
+        for (int i = 0; i < charAry.Length; i++)
         {
-            if (vowelSet.Contains(s[i]))
-            {
-                vowels.Add(s[i]);
-                indexes.Add(i);
-            }
-            else charAry[i] = s[i];
+            var currChar = charAry[i];
+            if (!vowelSet.Contains(currChar)) continue;
+            
+            vowels.Add(currChar);
+            indexes.Add(i);
         }
         
         if (vowels.Count == 0) return s;
