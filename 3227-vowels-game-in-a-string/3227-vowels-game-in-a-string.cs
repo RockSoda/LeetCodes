@@ -1,17 +1,9 @@
 public class Solution 
 {
-    public bool DoesAliceWin(string s) 
+    HashSet<char> VowelsSet = new HashSet<char>
     {
-        var vowelsSet = new HashSet<char>
-        {
-            'a', 'e', 'i', 'o', 'u'
-        };
-        
-        foreach(var c in s)
-        {
-            if(vowelsSet.Contains(c)) return true;
-        }
-        
-        return false;
-    }
+        'a', 'e', 'i', 'o', 'u'
+    };
+
+    public bool DoesAliceWin(string s) => s.Any(c => VowelsSet.Contains(c));
 }
