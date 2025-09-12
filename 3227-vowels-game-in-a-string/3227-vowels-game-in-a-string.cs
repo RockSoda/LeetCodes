@@ -6,6 +6,12 @@ public class Solution
         {
             'a', 'e', 'i', 'o', 'u'
         };
-        return s.Any(c => vowelsSet.Contains(c)) ? true : false;
+        
+        foreach(var c in s)
+        {
+            if(vowelsSet.Contains(c)) return true;
+        }
+        
+        return false;
     }
 }
