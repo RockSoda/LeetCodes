@@ -6,8 +6,6 @@ public class Solution
         {
             'a', 'e', 'i', 'o', 'u'
         };
-
-        var vowels = s.Count(c => vowelsSet.Contains(c));
-        return vowels == 0 ? false : true;
+        return s.Any(c => vowelsSet.Contains(c)) ? true : false;
     }
 }
