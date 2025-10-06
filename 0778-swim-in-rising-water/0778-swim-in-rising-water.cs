@@ -20,11 +20,12 @@ public class Solution
         var high = grid.Select(row => row.Max()).Max();
         var low = grid[0][0];
         var result = high;
+        var visited = new HashSet<(int, int)>();
         while(low <= high)
         {
             var mid = low + (high - low) / 2;
-            
-            if(DFS(grid, 0, 0, mid, new HashSet<(int, int)>())) 
+            visited.Clear();
+            if(DFS(grid, 0, 0, mid, visited)) 
             {
                 result = mid;
                 high = mid - 1;
