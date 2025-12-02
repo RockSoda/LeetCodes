@@ -5,7 +5,7 @@ public class Solution
         var bitwiseOr = 0;
         foreach(var num in nums)
         {
-            if((int)(num & 1) == 1) continue;
+            if((num & 1) == 1) continue;
 
             bitwiseOr |= num;
         }
