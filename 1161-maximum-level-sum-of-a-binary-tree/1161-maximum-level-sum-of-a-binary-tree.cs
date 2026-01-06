@@ -13,20 +13,29 @@
  */
 public class Solution 
 {
-    private void Traversal(TreeNode node, Dictionary<int, long> map, int level = 1)
+    private void Traversal(TreeNode node, List<int> levelSum, int level = 0)
     {
         if(node == null) return;
         
-        map[level] = map.ContainsKey(level) ? map[level] + node.val : node.val;
+        if(level >= levelSum.Count) levelSum.Add(node.val);
+        else levelSum[level] += node.val;
         
-        Traversal(node.left, map, level+1);
-        Traversal(node.right, map, level+1);
+        Traversal(node.left, levelSum, level+1);
+        Traversal(node.right, levelSum, level+1);
     }
     
     public int MaxLevelSum(TreeNode root) 
     {
-        var map = new Dictionary<int, long>();
-        Traversal(root, map);
-        return map.ToList().OrderByDescending(kvp => kvp.Value).ThenBy(kvp => kvp.Key).First().Key;
+        var levelSum = new List<int>();
+        Traversal(root, levelSum);
+        int minLevel = int.MaxValue, maxSum = int.MinValue;
+        for(int i = 0; i < levelSum.Count; i++)
+        {
+            if(maxSum >= levelSum[i]) continue;
+
+            maxSum = levelSum[i];
+            minLevel = i;
+        }
+        return minLevel+1;
     }
 }
