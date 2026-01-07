@@ -17,32 +17,32 @@ public class Solution
 
     private long MAX = 0;
 
-    private long SubtreeSum(TreeNode node)
+    private long SUM = 0;
+
+    private long GetSum(TreeNode node)
+    {
+        if(node == null) return 0;
+        return node.val +GetSum(node.left) + GetSum(node.right);
+    }
+
+    private long FindMax(TreeNode node)
     {
         if(node == null) return 0;
 
-        long left = SubtreeSum(node.left);
-        long right = SubtreeSum(node.right);
+        var leftSum = FindMax(node.left);
+        var rightSum = FindMax(node.right);
 
-        return node.val += (int)(left + right);
-    }
+        long subTreeSum = node.val + leftSum + rightSum;
 
-    private void FindMax(TreeNode node, long sum)
-    {
-        if(node == null) return;
-        
-        var restOfTheTreeSum = sum - node.val;
+        MAX = Math.Max(subTreeSum * (SUM - subTreeSum), MAX);
 
-        if(restOfTheTreeSum > 0) MAX = Math.Max(MAX, (node.val * restOfTheTreeSum));
-
-        FindMax(node.left, sum);
-        FindMax(node.right, sum);
+        return subTreeSum;
     }
 
     public int MaxProduct(TreeNode root)
     {
-        var sum = SubtreeSum(root);
-        FindMax(root, sum);
+        SUM = GetSum(root);
+        FindMax(root);
 
         return (int)(MAX % MOD);
     }
