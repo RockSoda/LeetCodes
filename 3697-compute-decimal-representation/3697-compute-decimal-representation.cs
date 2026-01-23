@@ -4,13 +4,13 @@ public class Solution
     {
         int input = n;
         var output = new List<int>();
-        int pow = 0;
+        int mod = 10;
         while(input > 0)
         {
-            var component = (input%10)*(int)Math.Pow(10, pow);
+            var component = input % mod;
             if(component > 0) output.Insert(0, component);
-            input /= 10;
-            pow++;
+            input -= component;
+            mod *= 10;
         }
         return output.ToArray();
     }
