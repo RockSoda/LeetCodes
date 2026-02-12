@@ -2,7 +2,7 @@ public class Solution
 {
     public long GridGame(int[][] grid) 
     {
-        long rowSum = grid[0].Sum();
+        long rowSum = grid[0].Select(cell => (long)cell).Sum();
         long min = long.MaxValue;
         long secondRowSum = 0;
 
