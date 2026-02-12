@@ -5,7 +5,8 @@ public class Solution
         int maxLen = 0;
         for(int i = 0; i < nums.Length; i++)
         {
-            var odd = new HashSet<int>(), even = new HashSet<int>();
+            var odd = new HashSet<int>();
+            var even = new HashSet<int>();
             for(int j = i; j < nums.Length; j++)
             {
                 if(nums[j] % 2 == 0) even.Add(nums[j]);
@@ -14,7 +15,7 @@ public class Solution
                 if(odd.Count() == even.Count()) maxLen = Math.Max(maxLen, j-i+1);
             }
         }
-        
+
         return maxLen;
     }
 }
