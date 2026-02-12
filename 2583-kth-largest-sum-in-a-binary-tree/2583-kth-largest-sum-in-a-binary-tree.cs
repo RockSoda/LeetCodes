@@ -28,6 +28,6 @@ public class Solution
         var map = new Dictionary<int, long>();
         Traverse(root, 0, map);
         var skipped = map.Count - k;
-        return skipped <= 0 ? -1 : map.Select(kvp => kvp.Value).OrderBy(x => x).Skip(skipped).First();
+        return skipped < 0 ? -1 : map.Select(kvp => kvp.Value).OrderBy(x => x).Skip(skipped).First();
     }
 }
