@@ -6,10 +6,13 @@ public class Solution
         foreach(var dimension in dimensions)
         {
             var currDiagonal = dimension[0] * dimension[0] + dimension[1] * dimension[1];
-            if(currDiagonal <= maxDiagonal) continue;
+            if(currDiagonal < maxDiagonal) continue;
+
+            areaOfTheMax = currDiagonal == maxDiagonal ? 
+                           Math.Max(dimension[0] * dimension[1], areaOfTheMax) : 
+                           dimension[0] * dimension[1];
             
             maxDiagonal = currDiagonal;
-            areaOfTheMax = dimension[0] * dimension[1];
         }
         return areaOfTheMax;
     }
