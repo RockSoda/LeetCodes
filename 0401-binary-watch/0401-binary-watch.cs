@@ -32,7 +32,8 @@ public class Solution
             foreach(var hour in hourList)
             {
                 var prefix = hour + ":";
-                minList.ForEach(min => {
+                minList.ForEach(min => 
+                {
                     var sb = new StringBuilder();
                     
                     sb.Append(prefix);
