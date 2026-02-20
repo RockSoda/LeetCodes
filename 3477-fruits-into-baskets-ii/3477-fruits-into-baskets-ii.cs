@@ -4,24 +4,23 @@ public class Solution
     {
         var isBasketFilled = new bool[baskets.Length];
 
-        int GetNextBasketIdx(int fruit)
+        bool CanFindNextBasket(int fruit)
         {
             for(int i = 0; i < baskets.Length; i++)
             {
                 if(isBasketFilled[i] || baskets[i] < fruit) continue;
                 
                 isBasketFilled[i] = true;
-                return i;
+                return true;
             }
 
-            return -1;
+            return false;
         }
         
         var remained = 0;
         foreach(var fruit in fruits)
         {
-            var idx = GetNextBasketIdx(fruit);
-            if(idx != -1) continue;
+            if(CanFindNextBasket(fruit)) continue;
             remained++;
         }
         return remained;
