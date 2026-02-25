@@ -1,39 +1,33 @@
 public class Solution 
 {
-    private string ToBin(int num) => Convert.ToString(num, 2);
-    
-    private int GetOccurance(string str, char c)
-    {
-        int counter = 0;
-        foreach(char ch in str) if(ch == c) counter++;
-        
-        return counter;
-    }
-    
     public int[] SortByBits(int[] arr) 
     {
-        Array.Sort(arr);
-        var map = new SortedDictionary<int, List<int>>();
-        
-        foreach(int num in arr)
+        int GetNumOfOneBits(int n)
         {
-            int numOfOnes = GetOccurance(ToBin(num), '1');
-            if(map.ContainsKey(numOfOnes)) map[numOfOnes].Add(num);
-            else map.Add(numOfOnes, new List<int>{ num });
-        }
-        
-        var output = new int[arr.Length];
-        
-        int index = 0;
-        foreach(var kvp in map)
-        {
-            foreach(int num in kvp.Value)
+            var count = 0;
+            while(n > 0)
             {
-                output[index] = num;
-                index++;
+                count += (n&1);
+                n >>= 1;
             }
+            return count;
         }
-        
-        return output;
+        Array.Sort(arr);
+
+        var map = new Dictionary<int, List<int>>();
+        foreach(var num in arr)
+        {
+            var bits = GetNumOfOneBits(num);
+            if(!map.ContainsKey(bits)) map[bits] = new List<int>();
+            map[bits].Add(num);
+        }
+
+        var output = new List<int>();
+
+        var keys = map.Keys.ToList();
+        keys.Sort();
+        foreach(var key in keys) output.AddRange(map[key]);
+
+        return output.ToArray();
     }
 }
