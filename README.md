@@ -46,6 +46,7 @@ My LeetCode solutions
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
 | [3429-special-array-i](https://github.com/RockSoda/LeetCodes/tree/master/3429-special-array-i) |
 ## Hash Table
@@ -81,4 +82,8 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 <!---LeetCode Topics End-->
