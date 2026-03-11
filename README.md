@@ -88,4 +88,8 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1009-complement-of-base-10-integer](https://github.com/RockSoda/LeetCodes/tree/main/1009-complement-of-base-10-integer/) | Easy |
 <!---LeetCode Topics End-->
