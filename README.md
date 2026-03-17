@@ -54,6 +54,7 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
+| [2309-greatest-english-letter-in-upper-and-lower-case](https://github.com/RockSoda/LeetCodes/tree/main/2309-greatest-english-letter-in-upper-and-lower-case/) | Easy |
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -62,6 +63,7 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
+| [2309-greatest-english-letter-in-upper-and-lower-case](https://github.com/RockSoda/LeetCodes/tree/main/2309-greatest-english-letter-in-upper-and-lower-case/) | Easy |
 ## Stack
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -72,6 +74,7 @@ My LeetCode solutions
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
 | [1784-check-if-binary-string-has-at-most-one-segment-of-ones](https://github.com/RockSoda/LeetCodes/tree/main/1784-check-if-binary-string-has-at-most-one-segment-of-ones/) | Easy |
+| [2309-greatest-english-letter-in-upper-and-lower-case](https://github.com/RockSoda/LeetCodes/tree/main/2309-greatest-english-letter-in-upper-and-lower-case/) | Easy |
 | [2463-minimum-recolors-to-get-k-consecutive-black-blocks](https://github.com/RockSoda/LeetCodes/tree/master/2463-minimum-recolors-to-get-k-consecutive-black-blocks) |
 ## Sliding Window
 | Problem Name | Difficulty |
