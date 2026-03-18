@@ -49,12 +49,14 @@ My LeetCode solutions
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
+| [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
 | [3429-special-array-i](https://github.com/RockSoda/LeetCodes/tree/master/3429-special-array-i) |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
 | [2309-greatest-english-letter-in-upper-and-lower-case](https://github.com/RockSoda/LeetCodes/tree/main/2309-greatest-english-letter-in-upper-and-lower-case/) | Easy |
+| [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -89,6 +91,7 @@ My LeetCode solutions
 | ------- | ------- |
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+| [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
