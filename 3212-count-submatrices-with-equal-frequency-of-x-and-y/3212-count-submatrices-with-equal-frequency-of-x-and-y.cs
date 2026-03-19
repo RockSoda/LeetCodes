@@ -38,7 +38,9 @@ public class Solution
                                    y + prefixSum[i][j-1].y + prefixSum[i-1][j].y - prefixSum[i-1][j-1].y);
             }
         }
-        
-        return prefixSum.Select(row => row.Count(cell => cell.x == cell.y && cell.x != 0)).Sum();
+
+        var output = 0;
+        foreach(var row in prefixSum) output += row.Count(cell => cell.x == cell.y && cell.x != 0);
+        return output;
     }
 }
