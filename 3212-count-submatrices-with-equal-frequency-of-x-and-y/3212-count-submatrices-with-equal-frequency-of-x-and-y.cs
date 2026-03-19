@@ -34,7 +34,8 @@ public class Solution
             {
                 (int x, int y) = GetXY(grid[i][j]);
 
-                prefixSum[i][j] = (x + prefixSum[i][j-1].x + prefixSum[i-1][j].x - prefixSum[i-1][j-1].x, y + prefixSum[i][j-1].y + prefixSum[i-1][j].y - prefixSum[i-1][j-1].y);
+                prefixSum[i][j] = (x + prefixSum[i][j-1].x + prefixSum[i-1][j].x - prefixSum[i-1][j-1].x, 
+                                   y + prefixSum[i][j-1].y + prefixSum[i-1][j].y - prefixSum[i-1][j-1].y);
             }
         }
         var output = 0;
