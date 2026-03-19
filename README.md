@@ -50,6 +50,7 @@ My LeetCode solutions
 | [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
 | [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
+| [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/RockSoda/LeetCodes/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
 | [3429-special-array-i](https://github.com/RockSoda/LeetCodes/tree/master/3429-special-array-i) |
 ## Hash Table
 | Problem Name | Difficulty |
@@ -97,9 +98,14 @@ My LeetCode solutions
 | ------- | ------- |
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
+| [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/RockSoda/LeetCodes/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0476-number-complement](https://github.com/RockSoda/LeetCodes/tree/main/0476-number-complement/) | Easy |
 | [1009-complement-of-base-10-integer](https://github.com/RockSoda/LeetCodes/tree/main/1009-complement-of-base-10-integer/) | Easy |
+## Prefix Sum
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/RockSoda/LeetCodes/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
 <!---LeetCode Topics End-->
