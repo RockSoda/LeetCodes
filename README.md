@@ -77,6 +77,7 @@ My LeetCode solutions
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
 | [1784-check-if-binary-string-has-at-most-one-segment-of-ones](https://github.com/RockSoda/LeetCodes/tree/main/1784-check-if-binary-string-has-at-most-one-segment-of-ones/) | Easy |
+| [2138-divide-a-string-into-groups-of-size-k](https://github.com/RockSoda/LeetCodes/tree/main/2138-divide-a-string-into-groups-of-size-k/) | Easy |
 | [2309-greatest-english-letter-in-upper-and-lower-case](https://github.com/RockSoda/LeetCodes/tree/main/2309-greatest-english-letter-in-upper-and-lower-case/) | Easy |
 | [2463-minimum-recolors-to-get-k-consecutive-black-blocks](https://github.com/RockSoda/LeetCodes/tree/master/2463-minimum-recolors-to-get-k-consecutive-black-blocks) |
 ## Sliding Window
@@ -92,6 +93,7 @@ My LeetCode solutions
 | ------- | ------- |
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+| [2138-divide-a-string-into-groups-of-size-k](https://github.com/RockSoda/LeetCodes/tree/main/2138-divide-a-string-into-groups-of-size-k/) | Easy |
 | [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
 ## Matrix
 | Problem Name | Difficulty |
