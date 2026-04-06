@@ -47,6 +47,7 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0819-most-common-word](https://github.com/RockSoda/LeetCodes/tree/main/0819-most-common-word/) | Easy |
+| [0874-walking-robot-simulation](https://github.com/RockSoda/LeetCodes/tree/main/0874-walking-robot-simulation/) | Medium |
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/RockSoda/LeetCodes/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 | [1991-find-the-middle-index-in-array](https://github.com/RockSoda/LeetCodes/tree/main/1991-find-the-middle-index-in-array/) | Easy |
@@ -58,6 +59,7 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0819-most-common-word](https://github.com/RockSoda/LeetCodes/tree/main/0819-most-common-word/) | Easy |
+| [0874-walking-robot-simulation](https://github.com/RockSoda/LeetCodes/tree/main/0874-walking-robot-simulation/) | Medium |
 | [2215-finding-3-digit-even-numbers](https://github.com/RockSoda/LeetCodes/tree/master/2215-finding-3-digit-even-numbers) |
 | [2309-greatest-english-letter-in-upper-and-lower-case](https://github.com/RockSoda/LeetCodes/tree/main/2309-greatest-english-letter-in-upper-and-lower-case/) | Easy |
 | [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
@@ -95,6 +97,7 @@ My LeetCode solutions
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0874-walking-robot-simulation](https://github.com/RockSoda/LeetCodes/tree/main/0874-walking-robot-simulation/) | Medium |
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [2138-divide-a-string-into-groups-of-size-k](https://github.com/RockSoda/LeetCodes/tree/main/2138-divide-a-string-into-groups-of-size-k/) | Easy |
