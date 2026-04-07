@@ -100,6 +100,7 @@ My LeetCode solutions
 | [0874-walking-robot-simulation](https://github.com/RockSoda/LeetCodes/tree/main/0874-walking-robot-simulation/) | Medium |
 | [0999-available-captures-for-rook](https://github.com/RockSoda/LeetCodes/tree/main/0999-available-captures-for-rook/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/RockSoda/LeetCodes/tree/main/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+| [2069-walking-robot-simulation-ii](https://github.com/RockSoda/LeetCodes/tree/main/2069-walking-robot-simulation-ii/) | Medium |
 | [2138-divide-a-string-into-groups-of-size-k](https://github.com/RockSoda/LeetCodes/tree/main/2138-divide-a-string-into-groups-of-size-k/) | Easy |
 | [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
 ## Matrix
@@ -122,4 +123,8 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0819-most-common-word](https://github.com/RockSoda/LeetCodes/tree/main/0819-most-common-word/) | Easy |
+## Design
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2069-walking-robot-simulation-ii](https://github.com/RockSoda/LeetCodes/tree/main/2069-walking-robot-simulation-ii/) | Medium |
 <!---LeetCode Topics End-->
