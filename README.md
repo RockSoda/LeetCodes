@@ -55,6 +55,7 @@ My LeetCode solutions
 | [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
 | [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/RockSoda/LeetCodes/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
 | [3429-special-array-i](https://github.com/RockSoda/LeetCodes/tree/master/3429-special-array-i) |
+| [3653-xor-after-range-multiplication-queries-i](https://github.com/RockSoda/LeetCodes/tree/main/3653-xor-after-range-multiplication-queries-i/) | Medium |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -103,6 +104,7 @@ My LeetCode solutions
 | [2069-walking-robot-simulation-ii](https://github.com/RockSoda/LeetCodes/tree/main/2069-walking-robot-simulation-ii/) | Medium |
 | [2138-divide-a-string-into-groups-of-size-k](https://github.com/RockSoda/LeetCodes/tree/main/2138-divide-a-string-into-groups-of-size-k/) | Easy |
 | [2682-find-the-losers-of-the-circular-game](https://github.com/RockSoda/LeetCodes/tree/main/2682-find-the-losers-of-the-circular-game/) | Easy |
+| [3653-xor-after-range-multiplication-queries-i](https://github.com/RockSoda/LeetCodes/tree/main/3653-xor-after-range-multiplication-queries-i/) | Medium |
 ## Matrix
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -127,4 +129,8 @@ My LeetCode solutions
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2069-walking-robot-simulation-ii](https://github.com/RockSoda/LeetCodes/tree/main/2069-walking-robot-simulation-ii/) | Medium |
+## Divide and Conquer
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3653-xor-after-range-multiplication-queries-i](https://github.com/RockSoda/LeetCodes/tree/main/3653-xor-after-range-multiplication-queries-i/) | Medium |
 <!---LeetCode Topics End-->
