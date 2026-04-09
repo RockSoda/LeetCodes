@@ -34,7 +34,7 @@ public class Solution
             { "28th", "28" },
             { "29th", "29" },
             { "30th", "30" },
-            { "31st", "31" }
+            { "31st", "31" },
         };
 
         var monthMap = new Dictionary<string, string>
@@ -54,7 +54,7 @@ public class Solution
         };
 
         var arr = date.Split(' ');
-        
+
         var sb = new StringBuilder();
         sb.Append(arr[2]);
         sb.Append('-');
